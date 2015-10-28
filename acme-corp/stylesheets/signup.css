@@ -1,0 +1,32 @@
+form ol {
+  list-style: none;
+  padding: 0;
+}
+form li {
+  margin-bottom: .5em;
+}
+label {
+  min-width: 150px;
+  display: inline-block;
+}
+input:focus {
+  outline: 0;
+  box-shadow: 0 0 10px blue;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 4px 7px;
+}
+input[type="text"]:invalid,
+input[type="email"]:invalid,
+input[type="password"]:invalid {
+  border-color: red;
+}
+input[type="text"]:valid,
+input[type="email"]:valid,
+input[type="password"]:valid {
+  border-color: green;
+}

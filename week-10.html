@@ -1,0 +1,74 @@
+<h2>Week 10</h2>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="week-10/conditionals.html">Conditionals</a></li>
+  <li><a href="week-10/movie-search-images.html">Movie search with images starting point</a></li>
+  <li><a href="week-10/movie-search-images-solution.html">Movie search with images solution</a></li>
+  <li><a href="https://daneden.github.io/animate.css/">Animate.css</a></li>
+  <li><a href="https://desandro.github.io/3dtransforms/">Intro to CSS 3D Transforms</a></li>
+  <li><a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">
+    Custom Domains with GitHub Pages</a>
+  </li>
+  <li><a href="week-10/animations.html">Animations</a></li>
+  <li><a href="week-10/responsive.html">Responsive Review</a></li>
+  <li><a href="week-10/bootstrap.html">Bootstrap + Whales = Whalestrap</a></li>
+</ul>
+
+<h3>Conditionals</h3>
+
+<p>Conditionals are how we branch our code based on some condition in programming languages.</p>
+
+<p>Often times, the condition in a conditional is based on a comparison of some values. In javascript, we use the following operators to compare values:</p>
+
+<ul>
+  <li><code>==</code> (or <code>===</code>): equal to</li>
+  <li><code>!=</code> (or <code>!==</code>): not equal to</li>
+  <li><code>&gt;</code>: greater than</li>
+  <li><code>&gt;=</code>: greater than or equal to</li>
+  <li><code>&lt;</code>: less than</li>
+  <li><code>&lt;=</code>: less than or equal to</li>
+</ul>
+
+<p>Conditionals are simply blocks of code wrapped in some condition statement.  If this statement is <code>true</code>, then the code executes, otherwise it does not. They also provide a way to include alternative logic in an <code>else</code> block.  In javascript, they look something like this:</p>
+
+<pre><code>var a = 1;<br/>var b = 2;<br/>if (a === b) {<br/>&nbsp;&nbsp;// this will NOT execute...:<br/>&nbsp;&nbsp;alert('how could this be!?!?!');<br/>} else {<br/>&nbsp;&nbsp;// ...but this will execute:<br/>&nbsp;&nbsp;alert('naturally...');<br/>}</code></pre>
+
+<p>Comparisons return booleans.  We can combine booleans using the <code>&&</code> (and) and <code>||</code> (or) operators.  The following tables show how these operators will combine different boolean values:</p>
+
+<table class="table">
+  <tr>
+    <th><code>&&</code> (and)</th>
+    <th>true</th>
+    <th>false</th>
+  </tr>
+  <tr>
+    <th>true</th>
+    <td>returns <code>true</code></td>
+    <td>returns <code>false</code></td>
+  </tr>
+  <tr>
+    <th>false</th>
+    <td>returns <code>false</code></td>
+    <td>returns <code>false</code></td>
+  </tr>
+</table>
+
+<table class="table">
+  <tr>
+    <th><code>||</code> (or)</th>
+    <th>true</th>
+    <th>false</th>
+  </tr>
+  <tr>
+    <th>true</th>
+    <td>returns <code>true</code></td>
+    <td>returns <code>true</code></td>
+  </tr>
+  <tr>
+    <th>false</th>
+    <td>returns <code>true</code></td>
+    <td>returns <code>false</code></td>
+  </tr>
+</table>

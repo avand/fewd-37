@@ -1,0 +1,49 @@
+<button>Move</button>
+
+<div class="box start">
+</div>
+
+<script>
+document.querySelector("button").addEventListener("click", function(e) {
+  var box = document.querySelector(".box");
+  box.classList.toggle("start");
+  box.classList.toggle("end");
+
+  // Or, add the "fancy-move" class to trigger the keyframes animation.
+  // box.classList.add("fancy-move");
+})
+</script>
+
+<style>
+.box {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: #3ab573;
+  position: absolute;
+  transition: all 300ms ease infinite;
+}
+
+.start {
+  top: 50px;
+  left: 0;
+}
+
+.end {
+  top: 150px;
+  left: 500px;
+  background-color: red;
+  border-radius: 100%;
+}
+
+.fancy-move {
+  animation: fancy-move 1s;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes fancy-move {
+  0% { top: 25px; left: 25px; }
+  25% { top: 100px; left: 50px; border-radius: 50px; }
+  100% { top: 100px; left: 500px; }
+}
+</style>

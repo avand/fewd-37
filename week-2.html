@@ -1,0 +1,149 @@
+<h2 id="week-2">Week 2</h2>
+
+<h3>
+  Homework: ACME Corp
+</h3>
+
+<p>
+  Build the homepage for Acme Anvil Corporation. It should end up looking like this:
+</p>
+
+<a href="http://cloud.avandamiri.com/image/1H04140w312u/Screen%20Shot%202015-07-30%20at%2011.07.06%20PM.png" target="_blank">
+  <img src="http://cloud.avandamiri.com/image/1H04140w312u/Screen%20Shot%202015-07-30%20at%2011.07.06%20PM.png">
+</a>
+
+<ul>
+  <li>Here's the URL for the image: <code>http://cloud.avandamiri.com/image/423B1n2p2v0U/acme-corp.jpg</code></li>
+  <li>Here's the URL for the background image: <code>http://cloud.avandamiri.com/image/3N410e2Q2Z3F/background.png</code></li>
+  <li>
+    To center a container (e.g. <code>&lt;main&gt;</code>) set <code>margin-left</code>
+    and <code>margin-right</code> to <code>auto</code> and set a <code>width</code>.
+    You can set the width to a percentage like 60% or so. Try also playing with <code>max-width</code>.
+  </li>
+</ul>
+
+<p>
+  We didn't get to finish building our profiles today. It would have been nice to
+  practice a bit more. I finished mine and posted it for you to use as a reference when
+  working on the homework. Just View > Developer > View Source to see my code.
+  <a href="http://avandamiri.com/my-fewd-34/" target="_blank">Avand's FEWD 34 profile</a>.
+</p>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="http://cloud.avandamiri.com/image/321P3C1g3k1f" target="_blank">Picture of HTML pop quiz whiteboard</a></li>
+  <li><a href="http://www.csszengarden.com/" target="_blank">CSS Zen Garden</a></li>
+  <li><a href="http://learnlayout.com" target="_blank">Learn Layout</a></li>
+  <li><a href="http://learn.shayhowe.com/" target="_blank">Learn from Shay Howe (my friend in Chicago)</a></li>
+  <li><a href="homework/week-1.html" target="_blank">Solution to Homework 1, Whales</a></li>
+  <li>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">
+      MDN CSS reference
+    </a>:
+
+    <ul>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/background">background</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border">border</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/color">color</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font">font</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/height">height</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/width">width</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin">margin</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding">padding</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">border-radius</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow">box-shadow</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align">text-align</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Submitting Homework</h3>
+
+<ul>
+  <li>Create a folder in your GitHub repo for homework. (maybe call it "homework")</li>
+  <li>Put your homework files in the homework folder</li>
+  <li>Commit and sync your changes to GitHub</li>
+</ul>
+
+<h3>&lt;head&gt;</h3>
+
+<p>
+  There are a bunch of things that make up a web page aside from the actual
+  document content itself. Stuff like:
+</p>
+
+<ul>
+  <li>Window/Tab/Page title</li>
+  <li>Description</li>
+  <li>Metadata about the page (used by other pages, like Facebook and Google)</li>
+  <li>Javascript files</li>
+  <li>CSS files</li>
+</ul>
+
+<p>
+  Generally speaking, metadata goes in the <code>&lt;head&gt;</code> tag,
+  and page content goes in the <code>&lt;body&gt;</code> tag.
+</p>
+
+<h3>Positioning </h3>
+
+<p>
+  When you use anything other that <code>static</code> (the default value for position),
+  you'll be able to use the properties <code>top</code>, <code>right</code>,
+  <code>bottom</code> and <code>left</code> to adjust your elements position, but
+  how it is positioned depends on what value you set position to:
+</p>
+
+<ul>
+  <li>
+    <code>position: static;</code>
+    <p>
+      Positions based on the content; cannot be adjusted and it's the default
+      value for position for all elements (you probably don't need to know that,
+      but can use it to sound cool at parties).
+    </p>
+  </li>
+  <li>
+    <code>position: relative;</code>
+    <p>
+      Positions relative to where it normally is.
+    </p>
+  </li>
+  <li>
+    <code>position: absolute;</code>
+    <p>
+      "Absolute children have relative parents!" An absolute child element will be positioned
+      relative to it's parent (the one that has <code>position: relative</code>).
+    </p>
+  </li>
+  <li>
+    <code>position: fixed;</code>
+    <p>
+      Positions with respect to the browser window (useful for sticky headers and stuff).
+      Use with caution because it will probably cover text!
+    </p>
+  </li>
+</ul>

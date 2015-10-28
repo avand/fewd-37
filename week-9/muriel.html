@@ -1,0 +1,23 @@
+<div class="wheel">
+</div>
+
+<style>
+  .wheel {
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    transition: transform 3s;
+  }
+
+  .spin {
+    transform: rotate(1440deg);
+  }
+</style>
+
+<script>
+var wheel = document.querySelector(".wheel");
+wheel.addEventListener("click", spin);
+function spin(event) {
+  wheel.classList.add("spin");
+}
+</script>

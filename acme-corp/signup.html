@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>ACME Corp</title>
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/base.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/header.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/footer.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/buttons.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/signup.css">
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="images/acme-corp.jpg" width="200" height="55" id="logo" alt="ACME Anvil Corporation">
+      </a>
+
+      <nav>
+        <ol>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="signup.html" class="button">Sign Up</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <section class="container">
+      <h1>Sign Up</h1>
+
+      <form>
+        <ol>
+          <li>
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" placeholder="John" autofocus required>
+          </li>
+          <li>
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" placeholder="Doe" required>
+          </li>
+          <li>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="john.doe@example.com" required>
+          </li>
+          <li>
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+          </li>
+          <li>
+            <input type="checkbox" id="terms" required>
+            <label for="terms">Agree to our terms of service</label>
+          </li>
+          <li>
+            <input type="submit" value="Sign Up">
+          </li>
+        </ol>
+      </form>
+    </section>
+
+    <footer class="container">
+      Copyright, 2015
+    </footer>
+  </body>
+</html>

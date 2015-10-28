@@ -1,0 +1,109 @@
+<h2 id="week-7">Week 7</h2>
+
+<h3>Homework</h3>
+
+<a href="http://cloud.avandamiri.com/image/3S2m0M2L1S0j/Screen%20Shot%202015-09-03%20at%2011.22.08%20PM.png">
+  <img src="http://cloud.avandamiri.com/image/3S2m0M2L1S0j/Screen%20Shot%202015-09-03%20at%2011.22.08%20PM.png" alt="Homework Week 7" width="400" />
+</a>
+
+<p>
+  Your task this week is to build the site above (sorry it doesn't look very good).
+  When you load the page, you won't see anything but a button. Clicking the button should
+  loop through my favorite movies and add them to the page. For this homework you'll need:
+</p>
+
+<ul>
+  <li>An event listener (to wire up the button)</li>
+  <li>A loop (to go through each movie)</li>
+  <li>Lots of DOM manipulation (creating elements, appending them, etc.)</li>
+</ul>
+
+<p>
+  If you can successfully complete this assignment then the last thing to learn is how to
+  get results from an API, which is coming up next!
+</p>
+
+<p>
+  Good luck!
+</p>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="week-7/movies.html">Movies Starting Point</a></li>
+  <li><a href="week-7/todo-list-csv.html">Todo List CSV Starting Point</a></li>
+  <li><a href="week-7/todo-list-csv-solution.html">Todo List CSV Starting Point</a></li>
+  <li><a href="week-7/say-hello-arrays.html">Say Hello with Arrays</a></li>
+  <!--
+  <li>
+    <a href="spreadsheet.html">Spreadsheet starting point</a>
+    (<a href="spreadsheet-solution.html">Solution</a>)
+  </li>
+  <li>
+    <a href="arrays-query.html">Sorting a list exercise from class</a>
+  </li>
+  <li>Homework: <a href="for-loops-solution.html">Solution</a> (<a href="for-loops-solution-refactored.html">Refactored</a>)
+    <li>Day 1 In-Class Exercises (<a href="http://cloud.avandamiri.com/192m1n2a163D">Download ZIP</a>)
+      <ul>
+        <li><a href="conditionals.html">Conditionals</a></li>
+      </ul>
+    </li>
+  </li>
+  -->
+</ul>
+
+<h3>Arrays</h3>
+
+<p>In javascript, when we want to store a list of things, we use an object called <code>Array</code>.  Arrays can be created in javascript using square braces (<code>[</code>) like so: <code>['Avand', 'Rob', 'Sandi']</code></p>
+
+<p>Like the other javascript objects we've looked at so far, Arrays have properties and methods that you'll probably find useful:</p>
+
+<ul>
+  <li>
+    properties:
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length">length</a>: a count of the number of items in the array</li>
+    </ul>
+  </li>
+  <li>
+    methods:
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">push</a>: adds an item to the array</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop</a>: removes an item from the array</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">sort</a>: sorts the items in the array</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Looping</h3>
+
+<p>
+  In javascript, when we want to execute some code some number of times, we can use the <code>forEach()</code> function.
+</p>
+
+<p>
+  For example, the following code will add a list item to a list for each item in the array <code>instructors</code>:
+</p>
+
+<pre><code>
+  var instructors = ['Avand', 'Rob', 'Sandi'];<br>
+  var list = document.querySelector('ul');<br><br>
+
+  function listInstructor(instructor) {<br>
+    var item = document.createElement('li');<br>
+    item.textContent = instructor;<br>
+    list.appendChild(item);
+  }<br><br>
+
+  instructors.forEach(listInstructor);
+</code></pre>
+
+<h3>document.querySelectorAll</h3>
+
+<p><code>document.querySelectorAll</code> is another very useful function available in web browsers. This function can be used to get many items from the document based on a selector.</p>
+
+<p>It works just like <code>document.querySelector</code>, but instead of returning an <code>Element</code> object, <code>document.querySelectorAll</code> returns a <code>NodeList</code>, which is functionally like an array of <code>Element</code> objects (though it's actually its own object)</p>
+
+<p>The following code shows an example of how you might get all the <code>&lt;li&gt;</code> elements on the page and log their text content to the console:</p>
+
+<pre><code>var listItems = document.querySelectorAll('li');<br/>for (var i = 0; i < listItems.length; i++) {<br/>&nbsp;&nbsp;console.log(listItems[i].textContent);<br/>}</code></pre>

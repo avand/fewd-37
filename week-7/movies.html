@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+
+    <style>
+      body {
+        font-family: Arial;
+      }
+      #movies {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .movie {
+        overflow: auto;
+      }
+      .movie:not(:last-child) {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #b6b6b6;
+      }
+      .movie img {
+        float: left;
+        width: 100px;
+        margin-right: 20px;
+      }
+      .movie-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: .5em;
+      }
+      .movie-release-date {
+        color: #b6b6b6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Movies</h1>
+
+    <button id="list-movies">listMovies()</button>
+
+    <ul id="movies">
+      <!--li class="movie">
+        <img src="http://ia.media-imdb.com/images/M/MV5BMjMxMTQ3MzMwMV5BMl5BanBnXkFtZTgwNTYxNzYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg">
+        <div class="movie-title">Cool Runnings</div>
+        <div class="movie-release-date">1993</div>
+      </li-->
+    </ul>
+
+    <script>
+    // Array of movies (don't change this)
+    var movies = [
+      {
+        title: "Cool Runnings",
+        releaseDate: "1993",
+        image: "http://ia.media-imdb.com/images/M/MV5BMjMxMTQ3MzMwMV5BMl5BanBnXkFtZTgwNTYxNzYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg"
+      },
+      {
+        title: "Terminator 2",
+        releaseDate: "1991",
+        image: "http://ia.media-imdb.com/images/M/MV5BMTg5NzUwMDU5NF5BMl5BanBnXkFtZTcwMjk2MDA4Mg@@._V1_SY317_CR18,0,214,317_AL_.jpg"
+      },
+      {
+        title: "Interstellar",
+        releaseDate: "2014",
+        image: "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX214_AL_.jpg"
+      }
+    ];
+
+    // Your code goes here.
+    </script>
+  </body>
+</html>

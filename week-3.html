@@ -1,0 +1,143 @@
+<h2 id="week-3">Week 3</h2>
+
+<h3>
+  Homework:
+  <a target="_blank" href="https://www.schoology.com/assignment/261767240/info">
+    Acme Anvil Co. Continued
+  </a>
+</h3>
+
+<p>
+  <a href="acme-corp/index.html">Solution</a>
+</p>
+
+<p><strong>Homework is due on Thursday, August 13th.</strong></p>
+
+<p>
+  Build two more pages for Acme Anvil Corporation:
+  <a href="http://cloud.avandamiri.com/image/411k0Q450O36/screen_shot_2015-08-05_at_9.29.23_pm.png" target="_blank">Products</a> and
+  <a href="http://cloud.avandamiri.com/image/2L3j3o1m1u02/Screen%20Shot%202015-08-06%20at%2010.42.18%20PM.png" target="_blank">Sign Up</a>.
+</p>
+
+<ul>
+  <li>Below are screenshots of what the two pages should look like</li>
+  <li><a href="http://cloud.avandamiri.com/0u2a2B3a0G3N#" target="_blank">Here's a video</a> of the sign up page interactions</li>
+  <li><strong>Yes</strong>, you will need to learn new tags on your own!
+    <ul>
+      <li><code>&lt;label&gt;</code></li>
+      <li><code>&lt;input&gt;</code></li>
+      <li><code>&lt;select&gt;</code></li>
+      <li><code>&lt;option&gt;</code></li>
+      <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Element reference and documentation</a></li>
+    </ul>
+  </li>
+  <li>Choose any products (and images) from here: <a href="http://acme.com/catalog/" target="_blank">ACME Product Catalog</a></li>
+  <li><strong>Yes</strong>, you probably want to figure out how to share styles between pages</li>
+  <li>The screenshots aren't totally consistent (sorry!), I'm pulling them from an older cohort</li>
+</ul>
+
+<p>
+  The key to sharing CSS between pages is to create a stylesheet. It's nothing
+  fancy--just a plain text file with <code>.css</code> extension. So first,
+  create a file called <code>stylesheet.css</code> right next to your <code>index.html</code>.
+  If you want, you could put it in a folder--that's up to you. The next step
+  is to move your CSS <strong>from the <code>&lt;style&gt;</code></strong> (where it currently lives)
+  to <strong><code>stylesheet.css</code></strong>. <em>Do not put the <code>&lt;style&gt;</code>
+  tag in the <code>stylesheet.css</code> file (just the CSS).</em> Last step: where your <code>&lt;style&gt;</code>
+  used to be, put a <code>&lt;link&gt;</code> tag. Just like this:
+</p>
+
+<pre>
+  <code>
+    &lt;link rel="stylesheet" href="stylesheet.css" media="screen" &gt;
+  </code>
+</pre>
+
+<p>
+  Now you can create a new file, <code>products.html</code>, for example. Put that same
+  <code>&lt;link&gt;</code> tag on the new page. Now your styles are shared between pages.
+  Unfortunately, all the code for your header will have to be duplicated.
+</p>
+
+<table>
+  <tr>
+    <td>
+      <h3>Products Page</h3>
+      <a href="http://cloud.avandamiri.com/image/411k0Q450O36/screen_shot_2015-08-05_at_9.29.23_pm.png" target="_blank">
+        <img width="300" style="height: auto" src="http://cloud.avandamiri.com/image/411k0Q450O36/screen_shot_2015-08-05_at_9.29.23_pm.png" alt="ACME Products" />
+      </a>
+    </td>
+    <td>
+      <h3>Sign Up Page</h3>
+      <a href="http://cloud.avandamiri.com/image/2L3j3o1m1u02/Screen%20Shot%202015-08-06%20at%2010.42.18%20PM.png" target="_blank">
+        <img width="300" style="height: auto" src="http://cloud.avandamiri.com/image/2L3j3o1m1u02/Screen%20Shot%202015-08-06%20at%2010.42.18%20PM.png" alt="ACME Sign up" />
+      </a>
+  </tr>
+</table>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="http://acme.com/catalog/acme.html" target="_blank">Illustrated Catalog of ACME Products</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">Position according to MDN</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">Display according to MDN</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">MDN's list of CSS pseudo-classes</a></li>
+  <li><a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize CSS</a></li>
+  <li><a href="http://alistapart.com/article/css-positioning-101" target="_blank">Absolute Positioning Tutorial</a></li>
+  <li><a href="week-3/buttons.html" target="_blank">Buttons</a></li>
+  <li><a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize CSS</a></li>
+  <li><a href="color.adobe.com" target="_blank">Adobe Color</a></li>
+  <li><a href="http://www.colorzilla.com" target="_blank">ColorZilla: Color picker Chrome Extension</a></li>
+</ul>
+
+<h3>CSS selectors</h3>
+
+<p>CSS selectors are how you get things on the page to style them in your CSS. There are a few basic ways to do this:</p>
+
+<ul>
+  <li>by element: <code>a { color: red; }</code></li>
+  <li>by class: <code>.danger { color: red; }</code></li>
+</ul>
+
+<p>Remember:</p>
+
+<ul>
+  <li>Classes may be applied to many elements on the page.</li>
+  <li>Elements <strong>can</strong> have many classes!</li>
+</ul>
+
+<p>Select on multiple things on a single element by chaining selectors together without a space, for example: <code>a.danger.btn { color: red; }</code></p>
+
+<h3>Descendant CSS selectors</h3>
+
+<p>You can select nested elements by putting a space between selectors. For example: <code>header a</code> selects all the <code>&lt;a&gt;</code> tags in the header.</p>
+
+<p>Some rules of thumb when nesting CSS selectors:</p>
+
+<ul>
+  <li>Keep it shallow! Deeply nested selectors can get confusing.</li>
+  <li>Omit any unnecessary selectors.  Keep it as simple as possible!</li>
+</ul>
+
+<h3>Pseudo-selectors!</h3>
+
+<p>Pseudo-selectors allow you to create CSS selectors that select elements based on a particular state of that element (called pseudo-classes).  They are denoted by a colon.  For example: <code>a:hover</code> selects the <code>&lt;a&gt;</code> tags that are currently being hovered over by the cursor.</p>
+
+<p>A list of all the available pseudo-classes is available on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">MDN</a>.</p>
+
+<p>Some rules of thumb when using pseudo-selectors:</p>
+
+<ul>
+  <li>Use them sparingly! If you're uncertain, you probably don't need it.</li>
+  <li>Don't get too clever -- It's really easy for pseudo-selectors to get confusing!</li>
+</ul>
+
+<h3>CSS Layouts</h3>
+
+<p>The way we've managed CSS layouts has evolved over the years.  In chronological order:</p>
+
+<ul>
+  <li><strong>Tables:</strong> using the <code>&lt;table&gt;</code> tag, you can create columns and rows.  This (sort of) allows you to manage complex layouts, but it's really clunky and has some limitations</li>
+  <li><strong>Floats:</strong> using the CSS property <code>float:left;</code> or <code>float:right;</code> pulls elements out of the layout flow.  This has been used to create column layouts, but floating has some idiosyncrasies that require proactive management. Floated elements must be "cleared", and this can cause problems.</li>
+  <li><strong>Flexbox:</strong> using the CSS property <code>display:flex;</code> is the modern way to manage complex layouts with CSS.  It allows you to flexibly size child elements using some special CSS properties such as <code>flex</code>.  You can find more info at <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes">MDN</a>.</li>
+</ul>

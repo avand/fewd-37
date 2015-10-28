@@ -1,0 +1,144 @@
+<h2 id="week-5">Week 5</h2>
+
+<h3>Homework</h3>
+
+<p>
+  Finish the exercise DOM manipulation exercise we started in class. Here's what you will need:
+</p>
+
+<ol>
+  <li>
+    Download the <a href="week-5/dom-manipulation.html">DOM Manipulation</a> HTML file
+    (right click, save). You may have already done this in class note <strong>there are
+    new pseudo-code comments that you'll want to read</strong> (unless you want to take a crack
+    at it yourself without my hints).
+  </li>
+  <li>
+    Figure out how <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute()</a></code>
+    works.
+  </li>
+  <li>
+    Take a peek at Element's <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">classList</a></code>
+    property. There are two ways to solve the third set. Next week, I'll ask you to compare/contrast
+    the two methods. You can accomplish it with <code>setAttribute()</code> but you can also
+    use <code>classList</code> too. Maybe try both!
+  </li>
+  <li>
+    Watch this video of me demoing the solution:
+    <a href="http://cloud.avandamiri.com/0L293t0T461h" target="_blank">
+      http://cloud.avandamiri.com/0L293t0T461h
+    </a>
+  </li>
+  <li>Suffer. Learning to do things you've never done before is hard.</li>
+</ol>
+
+<p>
+  Feeling totally stuck? Here's a tip: look at the code we wrote together in class
+  for that first set. Above each line write a little comment to yourself explaing what it does.
+  This is your chance to explain what the hell the JS is doing. You should have one comment
+  above each line. Then step away for a few minutes, delete the code (leave the comments), and
+  <strong>re-write</strong> the code using your pseudo code. This translation process will
+  be super helpful for you--especially if you felt like you couldn't complete the set in-class.
+</p>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="week-5/objects.html">Objects</a></li>
+  <li><a href="week-5/dom-manipulation.html">DOM Manipulation</a></li>
+<!--
+  <li><a href="calc.html">Homework starting point</a></li>
+  <li><a href="events-1.html">Events in-class</a></li>
+  <li>
+    <a href="dom-manip.html">Exercise 1: DOM Manipulation</a>
+    (<a href="dom-manip-solution.html">solution</a>)
+  </li>
+  <li>
+    <a href="functions.html">Exercise 2: FUN-ctions!</a>
+    (<a href="functions-solution.html">solution</a>)
+  </li>
+  <li><a href="js-playground.html">JS Playground</a></li>
+  <li><a href="books/js-reference.pdf">JS Reference</a></li>
+  <li><a href="homework/week-4.html">Homework solution</a></li>
+  <li><a href="http://www.htmldog.com/guides/javascript/">HTML Dog: JavaScript</a></li>
+-->
+</ul>
+
+<h3>Objects</h3>
+
+<p>Objects are a very important data type in javascript.  Objects can be stored in variables like other data types, and they themselves can contain more values as <strong>key value pairs</strong>. Here's an example of assigning an object to a variable:</p>
+
+<pre><code>var myPerson = {<br/>&nbsp;&nbsp;firstName: null,<br/>&nbsp;&nbsp;lastName:null<br/>};</code></pre>
+
+<p>Object values can be accessed using a period (<code>.</code>), like so:</p>
+
+<pre><code>console.log(myPerson.firstName);</code></pre>
+
+<p>Objects can even contain code in the form of functions.  Here's an example of how you can add a function to the above object:</p>
+
+<pre><code>myPerson.getFullName = function() {<br/>&nbsp;&nbsp;return this.firstName + ' ' + this.lastName;<br/>};</code></pre>
+
+<p><code>this</code> in the above example is a very special variable in javascript. In this case it refers to the object myPerson because the function is attached to that object.</p>
+
+<h3>DOM Manipulation</h3>
+
+<p>"DOM manipulation" is a term used to describe how we change a web page document using javascript.  "DOM" stands for "Document Object Model", which really just refers to the page's document tree (something we've worked with a lot so far).</p>
+
+<p>A browser tab always includes a few important objects that you'll need to know about in order to manipulate the DOM:</p>
+
+<ul>
+  <li><code>window</code>: this object represents the entire browser tab.  It is the parent object of things we've already seen like <code>alert</code> and <code>prompt</code></li>
+  <li>
+    <code>document</code>: this object represents your html document.  You'll use it to get elements from the page.  It has some important functions:
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement">createElement</a></li>
+    </ul>
+  </li>
+  <li>
+    <code>element</code>: these objects (there's one for every element on your page) represent individual html elements.  The above document functions (<code>querySelector</code> and <code>createElement</code>) return elements. Elements also include some properties and functions that you'll find useful:
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent">textContent</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">appendChild</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute">getAttribute</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Here's an example of how you could use the functions listed above to add a link to a page:</p>
+
+<pre>
+  <code>
+    // get the body element<br>
+    var body = document.querySelector('body');<br><br>
+    // create an anchor element<br>
+    var anchor = document.createElement('a');<br><br>
+    // set the href and text of the anchor element<br>
+    anchor.setAttribute('href', 'http://avandamiri.com/fewd-30/');<br>
+    anchor.textContent = 'FEWD-34';<br><br>
+    // add the anchor element to the body<br>
+    body.appendChild(anchor);
+  </code>
+</pre>
+
+<h3>Event Handling</h3>
+
+<p>Elements in a web page emit all kinds of "events", for example when a button is clicked it "fires" a "click" event.  We can use these events to do things with special javascript functions called event handlers.</p>
+
+<p>Event handlers, which are just javascript functions to be called on some event, can be connected to events using a function on element objects called <code>addEventListener</code>.</p>
+
+<p>For example, you can create an event handler for button clicks that alerts a message like so:</p>
+
+<pre>
+  <code>
+    // get the button element<br>
+    var button = document.querySelector('button');<br><br>
+    // create an event handler<br>
+    function buttonClicked() {<br>
+      &nbsp;&nbsp;alert('Hello World!');<br>
+    }<br><br>
+    // add your event listener<br>
+    button.addEventListener('click', buttonClicked);
+  </code>
+</pre>

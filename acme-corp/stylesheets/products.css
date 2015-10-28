@@ -1,0 +1,28 @@
+.products li {
+  overflow: auto;
+  border-bottom: 1px solid #c1c1c1;
+  margin-top: 1em;
+  padding-bottom: 1em;
+}
+.products li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.products img {
+  max-width: 200px;
+  height: auto;
+  float: left;
+  margin-right: 20px;
+  padding: 5px;
+  background-color: #E6E6E6;
+  border: 1px solid #B3B3B3;
+  border-radius: 4px;
+}
+.products p,
+.products .stars {
+  margin-bottom: 1em;
+}
+.products a {
+  background-color: #DB0021;
+  border-color: #650020;
+}

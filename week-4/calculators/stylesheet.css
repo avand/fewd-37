@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  font-size: 20px;
+  line-height: 30px;
+}
+h1 {
+  font-size: 20px;
+}
+input {
+  font-size: inherit;
+  line-height: inherit;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+input[disabled] {
+  border: 0;
+}
+.panel {
+  margin-bottom: 100px;
+}
+.py {
+  background-image: url('http://cloud.avandamiri.com/image/0l0a39261I29/triangle.png');
+  background-size: 400px 260px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 300px;
+  width: 600px;
+  position: relative;
+}
+.py input {
+  width: 50px;
+}
+.py-a {
+  position: absolute;
+  top: 130px;
+  left: 60px;
+}
+.py-b {
+  position: absolute;
+  top: 240px;
+  left: 250px;
+}
+.py-c {
+  position: absolute;
+  left: 300px;
+  top: 80px;
+}
+.circum {
+  position: relative;
+  height: 200px;
+}
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid black;
+  position: absolute;
+  left: 150px;
+}
+.circum-r {
+  position: absolute;
+  top: 85px;
+  left: 250px;
+  width: 80px;
+}
+.circum-c {
+  position: absolute;
+  top: 85px;
+  left: 360px;
+  width: 140px;
+}
+.temp-f,
+.temp-c {
+  width: 80px;
+}
+.temp {
+  padding-left: 150px;
+}

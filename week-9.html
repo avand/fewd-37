@@ -1,0 +1,101 @@
+<h2 id="week-9">Week 9</h2>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="week-9/danaan.html">Final project idea: Danaan's eye tracker</a></li>
+  <li><a href="week-9/muriel.html">Final project idea: Muriel's wheel spinner</a></li>
+  <li><a href="week-9/jonathan.html">Final project idea: Jonathan's bookmarklet</a></li>
+  <li><a href="week-9/movie-search.html">Movie search starting point</a></li>
+  <li><a href="week-9/movie-search-solution.html">Movie search solution</a></li>
+</ul>
+
+<h3>Homework Review</h3>
+
+<p>
+  This is the code we wrote together in class. Hopefully,
+  it helps with doing your homework.
+</p>
+
+<pre><code>
+function displayMovie(movie) {
+  // Get the list and append a new list item to it
+  var list = document.querySelector("#movies");
+  var item = document.createElement("li");
+  list.appendChild(item);
+
+  // Create the title element and append it to the list item
+  var title = document.createElement("div");
+  title.textContent = movie.title;
+  item.appendChild(title)
+}
+</code></pre>
+
+<h3>XMLHttpRequest</h3>
+
+<p>
+  <code>XMLHttpRequest</code> (or XHR) is another javascript object that a browser provides.
+  It is used for retrieving data from a URL for use in your code.
+</p>
+
+<p>
+  The following function uses <code>XMLHttpRequest</code> to get data from a url and then
+  passes the data to another function to handle on success:
+</p>
+
+<pre><code>function get(url, success) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.addEventListener("readystatechange", function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      success(JSON.parse(xhr.response));
+    }
+  });
+
+  xhr.open("GET", url);
+  xhr.send();
+}</code></pre>
+
+<p>
+  The above code is handy for getting some data from a URL (for example, the
+  <a href="http://www.reddit.com/dev/api">Reddit JSON API</a>) to do something with in your
+  final project!
+</p>
+
+<p>
+  jQuery has a method just like this, which you can call like this: <code>$.get(url, callback)</code>.
+</p>
+
+<!--
+
+<h3>Maps</h3>
+
+<p>To follow along, you'll need a Mapbox API access token.  To get one, sign up for a Mapbox starter account (free) <a href="https://www.mapbox.com/signup/">here</a></p>
+
+<p>Leaflet is an excellent javascript mapping library that makes creating web maps super easy.  To add Leaflet to your page, you'll need to add the following two tags:</p>
+
+<pre><code>&lt;link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /&gt;<br>&lt;script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"&gt;&lt;/script&gt;</code></pre>
+
+<p>GeoJSON is just a way of storing geographic data as JSON.  It is widely used in the mapping community, and you'll find it all over the place if you look.  Here's a path to a GeoJSON file that contains SF bicycle routes pulled from the venerable <a href="https://www.openstreetmap.org/">OpenStreetMap project</a> (we'll put this on a map in class):</p>
+
+<pre><code>https://gist.githubusercontent.com/robgaston/dc5e5d709a0f1874a3b3/raw/ae107de9dc971abacf0cfa7a128c37fd3c38565a/sf_bike_routes.geojson</code></pre>
+
+<h3>Media Queries</h3>
+
+<p>Media queries are how you can make your css rules "responsive" - that is, it can respond to differences in the way your user is viewing the page.  Key to making pages mobile-friendly are the media queries <code>max-width</code> and <code>min-width</code></p>
+
+<p>Here's an example of how you could include a stylesheet for use when the user's screen is small (i.e. a mobile device):</p>
+
+<pre><code>&lt;link rel="stylesheet" media="(max-width: 600px)" href="mobile.css" /&gt;</code></pre>
+
+<h3>Local Storage</h3>
+
+<p>Local storage is a convenient way to store data in a user's browser to retrieve the next time that user visits your page.  To use it, we use a global object called <code>localStorage</code>.</p>
+
+<p>Items added to local storage are key value pairs.  The values stored in local storage are strings, so if you need to store objects or arrays you should use <code>JSON.stringify()</code> on them before adding them to local storage to store them as a string and use <code>JSON.parse()</code> after getting the value to turn it back into an object.</p>
+
+<p>Here is an example of how you could set and get data in local storage:</p>
+
+<pre><code>var fruits = ['apples','pears','oranges','kiwis'];<br>localStorage.setItem('fruits', JSON.stringify(fruits));<br><br>var storedFruits = JSON.parse(localStorage.getItem('fruits'));</code></pre>
+
+-->

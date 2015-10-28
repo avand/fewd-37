@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+
+    <style>
+      body {
+        font-family: Arial;
+      }
+      #movies {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .movie {
+        overflow: auto;
+      }
+      .movie:not(:last-child) {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #b6b6b6;
+      }
+      .movie img {
+        float: left;
+        width: 100px;
+        margin-right: 20px;
+      }
+      .movie-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: .5em;
+      }
+      .movie-release-date {
+        color: #b6b6b6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Movies</h1>
+
+    <button id="list-movies">listMovies()</button>
+
+    <ul id="movies">
+      <!--li class="movie">
+        <img src="http://ia.media-imdb.com/images/M/MV5BMjMxMTQ3MzMwMV5BMl5BanBnXkFtZTgwNTYxNzYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg">
+        <div class="movie-title">Cool Runnings</div>
+        <div class="movie-release-date">1993</div>
+      </li-->
+    </ul>
+
+    <script>
+    var movies = [
+      {
+        title: "Cool Runnings",
+        releaseDate: "1993",
+        image: "http://ia.media-imdb.com/images/M/MV5BMjMxMTQ3MzMwMV5BMl5BanBnXkFtZTgwNTYxNzYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg"
+      },
+      {
+        title: "Terminator 2",
+        releaseDate: "1991",
+        image: "http://ia.media-imdb.com/images/M/MV5BMTg5NzUwMDU5NF5BMl5BanBnXkFtZTcwMjk2MDA4Mg@@._V1_SY317_CR18,0,214,317_AL_.jpg"
+      },
+      {
+        title: "Interstellar",
+        releaseDate: "2014",
+        image: "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX214_AL_.jpg"
+      }
+    ]
+
+    function addMovie(movie) {
+      var list = document.querySelector("#movies");
+      var listItem = document.createElement("li");
+      var image = document.createElement("img");
+      var title = document.createElement("div");
+      var releaseDate = document.createElement("div");
+
+      image.setAttribute("src", movie.image);
+
+      listItem.classList.add('movie');
+      title.classList.add('movie-title');
+      releaseDate.classList.add('movie-release-date');
+
+      title.textContent = movie.title;
+      releaseDate.textContent = movie.releaseDate;
+
+      listItem.appendChild(image);
+      listItem.appendChild(title);
+      listItem.appendChild(releaseDate);
+      list.appendChild(listItem);
+    }
+
+    function listMovies() {
+      movies.forEach(addMovie);
+    }
+
+    document.querySelector("#list-movies").addEventListener("click", listMovies);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<style>
+  .face {
+    height: 100px;
+    width: 100px;
+  }
+  .face.looking-up {
+    background-color: red;
+  }
+  .face.looking-down {
+    background-color: blue;
+  }
+</style>
+
+<body>
+  <div class="face looking-up">
+  </div>
+</body>
+
+<script>
+var body = document.querySelector("body");
+body.addEventListener("mousemove", mouseMoved);
+var face = document.querySelector(".face");
+function mouseMoved(event) {
+  if (event.clientY > 100) {
+    face.classList.remove("looking-up");
+    face.classList.add("looking-down");
+  } else {
+    face.classList.add("looking-up");
+    face.classList.remove("looking-down");
+  }
+}
+</script>

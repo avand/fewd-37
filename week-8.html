@@ -1,0 +1,111 @@
+<h2 id="week-8">Week 8</h2>
+
+<h3>Homework</h3>
+
+<p>
+  Your assignment for this week is to finish all incomplete homework assignments.
+  On Tuesday, I expect everyone to be done with the Blog (solution already posted below) and
+  Movies. If you've done those assignments and are looking for a challenge, take a crack at building
+  <a href="http://cloud.avandamiri.com/3Q3C2x3W1l04" target="_blank">this spreadsheet (video)</a>.
+</p>
+
+<p>
+  Additionally, everyone should come to class with <strong>THREE</strong> final project ideas.
+  Here are two great places to get inspiration:
+</p>
+
+<ul>
+  <li><a href="http://bit.ly/fewd-finals" target="_blank">My past students' mostly broken projects</a></li>
+  <li><a href="https://gallery.generalassemb.ly/FEWD?metro=" target="_blank">GA's FEWD gallery</a></li>
+</ul>
+
+<p>
+  If your idea involves a data source, please go find everything you can about that data source.
+  You want to show us actually URLs that you can go to that return data back.
+</p>
+
+<h3>Resources</h3>
+
+<ul>
+  <li><a href="week-6/blog-solution.html">Blog solution (comments &amp; likes)</a></li>
+  <li><a href="week-8/spreadsheet.html">Spreadsheet starting point</a></li>
+  <li><a href="week-8/spreadsheet-solution.html">Spreadsheet solution</a></li>
+</ul>
+
+<h3>jQuery</h3>
+
+<p>jQuery is a powerful, widely used library that makes a lot of common practices in javascript web development a bit easier.  Here are some examples of how you can use jQuery for some common things we've already done:</p>
+
+<table class="table">
+  <tr>
+    <th></th>
+    <th>Vanilla JS</th>
+    <th>jQuery</th>
+  </tr>
+  <tr>
+    <th>xhr</th>
+    <td>see get function below...</td>
+    <td><code>$.get(url, success);</code></td>
+  </tr>
+  <tr>
+    <th>get element</th>
+    <td><code>var span = document.querySelector('span');</code></td>
+    <td><code>var span = $('span').first();</code></td>
+  </tr>
+  <tr>
+    <th>create element</th>
+    <td><code>var a = document.createElement('a');</code></td>
+    <td><code>var a = $('&lt;a&gt;');</code></td>
+  </tr>
+  <tr>
+    <th>add child</th>
+    <td><code>span.appendChild(a);</code></td>
+    <td><code>span.append(a);</code></td>
+  </tr>
+  <tr>
+    <th>get text</th>
+    <td><code>var linkText = a.textContent;</code></td>
+    <td><code>var linkText = a.text();</code></td>
+  </tr>
+  <tr>
+    <th>set text</th>
+    <td><code>a.textContent = linkText;</code></td>
+    <td><code>a.text(linkText);</code></td>
+  </tr>
+  <tr>
+    <th>get attribute</th>
+    <td><code>a.getAttribute('href');</code></td>
+    <td><code>a.attr('href');</code></td>
+  </tr>
+  <tr>
+    <th>set attribute</th>
+    <td><code>a.setAttribute('href', 'http://wikipedia.org/');</code></td>
+    <td><code>a.attr('href', 'http://wikipedia.org/');</code></td>
+  </tr>
+  <tr>
+    <th>add event listener</th>
+    <td><code>a.addEventListener('click', function() { console.log('click') };</code></td>
+    <td><code>a.on('click', function() { console.log('click') };</code></td>
+  </tr>
+</table>
+
+<p>The easiest way to add jQuery to your page is by adding the following script tag to your HTML (put this tag before your own scripts):</p>
+
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">&lt;/script></code></pre>
+
+<p>
+  Here are some examples on how to use jQuery to do basic DOM manipulation.
+</p>
+
+<pre><code>
+  $("&lt;li&gt;").text("...").addClass("...").appendTo("ul")
+
+  $("button").on("click", doSomething);
+
+  var cars = [
+    { "name": "Porsche" },
+    { "name": "Miata" }
+  ]
+
+  cars[0]["name"] // => "Porsche"
+</code></pre>

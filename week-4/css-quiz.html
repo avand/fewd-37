@@ -1,0 +1,120 @@
+<!--
+  Set 1:
+
+  1. What color will the links be?
+  2. Will the words "Homepage," "GitHub," and "Twitter" be on the same lines?
+  3. Will the list be centered? Why? Why not?
+  4. If someone told you to "make all the links on the site purple," what's the best way to
+     implement that?
+-->
+
+<style>
+ul {
+  margin: 0 auto;
+}
+li {
+  color: green;
+  display: inline;
+}
+</style>
+
+<ul>
+  <li><a href="http://avandamiri.com" style="color: red;">Homepage</a></li>
+  <li><a href="http://github.com/avand" style="color: red;">GitHub</a></li>
+  <li><a href="http://twitter.com/avand" style="color: red;">Twitter</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Set 2:
+
+  1. One of the CSS declarations below is incomplete. Which one? How do you make it complete?
+  2. Assuming complete CSS, how wide will the paragraph be (on screen) from the left edge of the
+     left border to the right edge of the right border?
+-->
+
+<style>
+p {
+  width: 100px;
+  height: 100px;
+  border: 10px blue;
+  padding: 20px 30px;
+  margin: 8px;
+}
+</style>
+
+<p>
+  I am a little paragraph, short and stout.
+</p>
+
+
+
+
+
+
+
+
+
+
+<!--
+  Set 3:
+
+  1. How wide will the link be on screen?
+-->
+
+<style>
+a { width: 400px; }
+</style>
+
+<a href="http://generalassemb.ly" style="width: 200px;">General Assembly</a>
+
+
+
+
+
+
+
+
+
+
+<!--
+  Set 4:
+
+  1. Where will the header be positioned on the screen?
+  2. How wide will the header be?
+  3. Where will the nav be positioned, relative to the header?
+  4. What about the "About us"? Where will it be positioned on the page?
+-->
+
+<style>
+header {
+  position: relative;
+  bottom: 0;
+}
+nav {
+  position: absolute;
+  right: 0;
+}
+</style>
+
+<header>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>Products</li>
+      <li style="position: fixed; bottom: 0; left: 0;">About us</li>
+    </ul>
+  </nav>
+</header>

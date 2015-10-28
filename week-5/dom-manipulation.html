@@ -1,0 +1,96 @@
+<style>
+body { font-family: sans-serif; }
+.set { border: 1px solid #ccc; padding: 0 2em; border-radius: 5px; margin-bottom: 2em; }
+#image { border: 5px dotted #ccc; border-radius: 10px; padding: 10px; margin-bottom: 1em; }
+.bold { font-weight: bold; }
+</style>
+
+<div class="set">
+  <h1>Set 1</h1>
+
+  <p>
+    When this button is clicked, prompt for a todo, create the list item, then add it to the list:
+  </p>
+
+  <p>
+    <button onclick="addListItem()">+ Add item</button>
+  </p>
+
+  <ol id="todo-list">
+    <li>Pick up dry cleaning</li>
+  </ol>
+
+  <script>
+  function addListItem() {
+    // 1. prompt for a todo and save the result         --> var text = prompt("What do you need to do today?")
+    // 2. create an li element                          --> document.createElement()
+    // 3. save the ul in a variable                     --> var list = ?
+    // 4. append the li to ul variable                  --> list.appendChild()
+    // 5. set the prompt result to the li's textContent --> item.textContent = ?
+
+    var text = prompt("What do you need to do today?");
+    var list = document.querySelector("#todo-list");
+    var item = document.createElement("li");
+
+    item.textContent = text;
+
+    list.appendChild(item);
+  }
+  </script>
+</div>
+
+<div class="set">
+  <h1>Set 2</h1>
+
+  <p>
+    When this button is clicked, prompt for an image source, width, and height.
+    Create an <code>&lt;img&gt;</code>, set the respective attributes, and put it in this box:
+  </p>
+
+  <p>
+    <button onclick="addImage()">+ Add image</button>
+  </p>
+
+  <div id="image">
+  </div>
+
+  <script>
+  function addImage() {
+  // When the button is clicked:                      --> already wired up on line 51
+  //  1. prompt for url (& assign result to var)      --> var url = prompt("What's the URL?")
+  //  2. prompt for width (& assign result to var)
+  //  3. prompt for height (& assign result to var)
+  //  4. create img element                           --> var img = document.createElement('img')
+  //  5. set img's src attribute                      --> img.setAttribute(?, ?)
+  //  6. set img's width attribute
+  //  7. set img's height attribute
+  //  8. append img to element identified as #image
+  //     8.1. assign element with selector "#image" to var
+  //     8.2. append img to that element
+  }
+  </script>
+</div>
+
+<div class="set">
+  <h1>Set 3</h1>
+
+  <p id="make-me-bold">
+    This paragraph is currently not bold. But there's a class <code>.bold</code>
+    set up in the CSS. Add that class to this paragraph when this button below is clicked.
+    Need something more ambitious? Make clicking toggle the <code>.bold</code> class.
+  </p>
+
+  <p>
+    <button onclick="makeBold()">Make bold</button>
+  </p>
+
+  <script>
+  function makeBold() {
+    // When the button is clicked:                                --> already wired up on line 84
+    //  1. assign element with selector "#make-me-bold" to a var
+    //  2. set the element's class attribute to "bold"
+    //  - or -
+    //  2. add the class "bold" using the element's classList
+  }
+  </script>
+</div>

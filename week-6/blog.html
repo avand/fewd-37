@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Blog</title>
+
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: #f1f0f5;
+        font-family: sans-serif;
+        font-size: 18px;
+        line-height: 1.4em;
+      }
+      main {
+        margin: 2em auto;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        background: white;
+        padding: 2em 3em;
+        max-width: 600px;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      article {
+        padding-bottom: 1em;
+        margin-bottom: 2em;
+        border-bottom: 1px solid #ccc;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+      }
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        color: #049cd8;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      textarea,
+      .comment {
+        border: 1px solid #ccc;
+        padding: .5em 1em;
+        margin: 1em 0;
+        border-radius: 5px;
+      }
+      textarea {
+        font-size: inherit;
+      }
+      button {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom-width: 2px;
+        border-radius: 5px; font-size: inherit;
+        color: white;
+        background-color: #049cd8;
+        padding: .5em 1em;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>The Challenges of Programming</h1>
+
+        <p>
+          Programming can be tough...
+          lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua.
+        </p>
+
+        <ul>
+          <li>lorem</li>
+          <li>ipsum</li>
+          <li>dolor</li>
+        </ul>
+
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+      </article>
+
+      <div class="like">
+        <a href="#" class="like-link">Like</a>
+        (<span class="like-count">0</span>)
+      </div>
+
+      <div id="comments">
+        <!--
+        <div class="comment">
+          You're looking good!
+        </div>
+        -->
+      </div>
+
+      <form id="new-comment">
+        <textarea id="new-comment-body" placeholder="Leave a comment..."></textarea>
+        <button type="submit">Comment</button>
+      </form>
+    </main>
+
+    <script>
+      // Your code goes here.
+    </script>
+  </body>
+</html>
