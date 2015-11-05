@@ -53,6 +53,56 @@
   and page content goes in the <code>&lt;body&gt;</code> tag.
 </p>
 
+<h3>Atom color-picker instructions</h2>
+
+<ol>
+  <li>Open Atom Settings</li>
+  <li>go to Install in the left hand sidebar</li>
+  <li>type "color-picker" into the search box</li>
+  <li>find the entry for "color-picker" by thomaslindstrom (there are other color picker packages, so make sure you're getting the right one) and click the "Install" button</li>
+  <li>bring up the color picker in Atom when editing a file by pressing cmd+shift+C</li>
+</ol>
+
+<h3>Positioning </h3>
+
+<p>
+  When you use anything other that <code>static</code> (the default value for position),
+  you'll be able to use the properties <code>top</code>, <code>right</code>,
+  <code>bottom</code> and <code>left</code> to adjust your elements position, but
+  how it is positioned depends on what value you set position to:
+</p>
+
+<ul>
+  <li>
+    <code>position: static;</code>
+    <p>
+      Positions based on the content; cannot be adjusted and it's the default
+      value for position for all elements (you probably don't need to know that,
+      but can use it to sound cool at parties).
+    </p>
+  </li>
+  <li>
+    <code>position: fixed;</code>
+    <p>
+      Positions with respect to the browser window (useful for sticky headers and stuff).
+      Use with caution because it will probably cover text!
+    </p>
+  </li>
+  <li>
+    <code>position: relative;</code>
+    <p>
+      Positions relative to where it normally is.
+    </p>
+  </li>
+  <li>
+    <code>position: absolute;</code>
+    <p>
+      "Absolute children have relative parents!" An absolute child element will be positioned
+      relative to it's parent (the one that has <code>position: relative</code>).
+    </p>
+  </li>
+</ul>
+
 <!--
 
 <ul>
@@ -153,44 +203,6 @@
   <li>Commit and sync your changes to GitHub</li>
 </ul>
 
-<h3>Positioning </h3>
 
-<p>
-  When you use anything other that <code>static</code> (the default value for position),
-  you'll be able to use the properties <code>top</code>, <code>right</code>,
-  <code>bottom</code> and <code>left</code> to adjust your elements position, but
-  how it is positioned depends on what value you set position to:
-</p>
-
-<ul>
-  <li>
-    <code>position: static;</code>
-    <p>
-      Positions based on the content; cannot be adjusted and it's the default
-      value for position for all elements (you probably don't need to know that,
-      but can use it to sound cool at parties).
-    </p>
-  </li>
-  <li>
-    <code>position: relative;</code>
-    <p>
-      Positions relative to where it normally is.
-    </p>
-  </li>
-  <li>
-    <code>position: absolute;</code>
-    <p>
-      "Absolute children have relative parents!" An absolute child element will be positioned
-      relative to it's parent (the one that has <code>position: relative</code>).
-    </p>
-  </li>
-  <li>
-    <code>position: fixed;</code>
-    <p>
-      Positions with respect to the browser window (useful for sticky headers and stuff).
-      Use with caution because it will probably cover text!
-    </p>
-  </li>
-</ul>
 
 -->
