@@ -87,10 +87,9 @@
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">Position according to MDN</a></li>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">Display according to MDN</a></li>
   <li><a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize CSS</a></li>
-  <!--li><a href="http://acme.com/catalog/acme.html" target="_blank">Illustrated Catalog of ACME Products</a></li>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">MDN's list of CSS pseudo-classes</a></li>
-  <li><a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize CSS</a></li>
   <li><a href="http://alistapart.com/article/css-positioning-101" target="_blank">Absolute Positioning Tutorial</a></li>
+  <!--li><a href="http://acme.com/catalog/acme.html" target="_blank">Illustrated Catalog of ACME Products</a></li>
   <li><a href="week-3/buttons.html" target="_blank">Buttons</a></li>
   <li><a href="color.adobe.com" target="_blank">Adobe Color</a></li>
   <li><a href="http://www.colorzilla.com" target="_blank">ColorZilla: Color picker Chrome Extension</a></li-->
@@ -114,6 +113,7 @@
 <ul>
   <li>by element: <code>a { color: red; }</code></li>
   <li>by class: <code>.danger { color: red; }</code></li>
+  <li>by id: <code>#warning-text { color: red; }</code></li>
 </ul>
 
 <p>Remember:</p>
@@ -121,6 +121,9 @@
 <ul>
   <li>Classes may be applied to many elements on the page.</li>
   <li>Elements <strong>can</strong> have many classes!</li>
+  <li>An id should be unique to an element on the page (i.e. multiple elements on your page should not share the same id)</li>
+  <li>id's should be used sparingly (if at all)... classes are usually a better way to select elements!</li>
+  <li>An element <strong>can have only one id</strong></li>
 </ul>
 
 <p>Select on multiple things on a single element by chaining selectors together without a space, for example: <code>a.danger.btn { color: red; }</code></p>
