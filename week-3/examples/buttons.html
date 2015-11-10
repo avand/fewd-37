@@ -1,0 +1,42 @@
+<!--
+  Create a <a>, <button>, <input type="submit">.
+  They all look different at first, but a class can solve that.
+-->
+
+<style>
+.button {
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+
+  font-size: 16px;
+  padding: 0.625em;
+
+  background-color: blue;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.button-danger {
+  background-color: red;
+}
+
+.button-primary {
+  background-color: red;
+}
+
+.button-small {
+  font-size: 12px;
+}
+
+</style>
+
+<a href="#" class="button">Click me</a>
+
+<button type="button" name="button" class="button">Click me</button>
+
+<input type="submit" value="Click me" class="button">
+
+<br><br><br>
+
+<a href="#" class="button button-danger button-small">Danger, don't click here</a>

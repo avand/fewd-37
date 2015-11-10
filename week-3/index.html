@@ -4,7 +4,78 @@
   Next week
 </nav>
 
-<h2 id="week-3">Week 3</h2>
+<h1 id="week-3">Week 3</h1>
+
+<h2>Resources</h2>
+
+<ul>
+  <li>
+    In-class examples:
+    <ul>
+      <li>
+        <a href="examples/position-fixed-header.html">Fixed position header</a>
+      </li>
+      <li>
+        <a href="examples/position-absolute.html">Fixed position header</a>
+      </li>
+      <li>
+        <a href="examples/buttons.html">CSS classes with buttons</a>
+      </li>
+      <li>
+        <a href="examples/span-highlight.html">Highlight class with span</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">Position according to MDN</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">Display according to MDN</a></li>
+  <li><a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize CSS</a></li>
+  <!--li><a href="http://acme.com/catalog/acme.html" target="_blank">Illustrated Catalog of ACME Products</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">MDN's list of CSS pseudo-classes</a></li>
+  <li><a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize CSS</a></li>
+  <li><a href="http://alistapart.com/article/css-positioning-101" target="_blank">Absolute Positioning Tutorial</a></li>
+  <li><a href="week-3/buttons.html" target="_blank">Buttons</a></li>
+  <li><a href="color.adobe.com" target="_blank">Adobe Color</a></li>
+  <li><a href="http://www.colorzilla.com" target="_blank">ColorZilla: Color picker Chrome Extension</a></li-->
+</ul>
+
+<h2>CSS Layouts</h2>
+
+<p>The way we've managed CSS layouts has evolved over the years.  In chronological order:</p>
+
+<ul>
+  <li><strong>Tables:</strong> using the <code>&lt;table&gt;</code> tag, you can create columns and rows.  This (sort of) allows you to manage complex layouts, but it's really clunky and has some limitations</li>
+  <li><strong>Floats:</strong> using the CSS property <code>float:left;</code> or <code>float:right;</code> pulls elements out of the layout flow.  This has been used to create column layouts, but floating has some idiosyncrasies that require proactive management. Floated elements must be "cleared", and this can cause problems.</li>
+  <li><strong>Flexbox:</strong> using the CSS property <code>display:flex;</code> is the modern way to manage complex layouts with CSS.  It allows you to flexibly size child elements using some special CSS properties such as <code>flex</code>.  You can find more info at <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes">MDN</a>.</li>
+</ul>
+
+<h2>CSS selectors</h2>
+
+<p>CSS selectors are how you get things on the page to style them in your CSS. There are a few basic ways to do this:</p>
+
+<ul>
+  <li>by element: <code>a { color: red; }</code></li>
+  <li>by class: <code>.danger { color: red; }</code></li>
+</ul>
+
+<p>Remember:</p>
+
+<ul>
+  <li>Classes may be applied to many elements on the page.</li>
+  <li>Elements <strong>can</strong> have many classes!</li>
+</ul>
+
+<p>Select on multiple things on a single element by chaining selectors together without a space, for example: <code>a.danger.btn { color: red; }</code></p>
+
+<h3>Descendant CSS selectors</h3>
+
+<p>You can select nested elements by putting a space between selectors. For example: <code>header a</code> selects all the <code>&lt;a&gt;</code> tags in the header.</p>
+
+<p>Some rules of thumb when nesting CSS selectors:</p>
+
+<ul>
+  <li>Keep it shallow! Deeply nested selectors can get confusing.</li>
+  <li>Omit any unnecessary selectors.  Keep it as simple as possible!</li>
+</ul>
 
 <!-- <h3>
   Homework:
@@ -81,60 +152,8 @@
   </tr>
 </table>
 -->
-<h3>Resources</h3>
-
-<ul>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">Position according to MDN</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">Display according to MDN</a></li>
-  <li><a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize CSS</a></li>
-  <!--li><a href="http://acme.com/catalog/acme.html" target="_blank">Illustrated Catalog of ACME Products</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">MDN's list of CSS pseudo-classes</a></li>
-  <li><a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize CSS</a></li>
-  <li><a href="http://alistapart.com/article/css-positioning-101" target="_blank">Absolute Positioning Tutorial</a></li>
-  <li><a href="week-3/buttons.html" target="_blank">Buttons</a></li>
-  <li><a href="color.adobe.com" target="_blank">Adobe Color</a></li>
-  <li><a href="http://www.colorzilla.com" target="_blank">ColorZilla: Color picker Chrome Extension</a></li-->
-</ul>
 
 
-<h3>CSS Layouts</h3>
-
-<p>The way we've managed CSS layouts has evolved over the years.  In chronological order:</p>
-
-<ul>
-  <li><strong>Tables:</strong> using the <code>&lt;table&gt;</code> tag, you can create columns and rows.  This (sort of) allows you to manage complex layouts, but it's really clunky and has some limitations</li>
-  <li><strong>Floats:</strong> using the CSS property <code>float:left;</code> or <code>float:right;</code> pulls elements out of the layout flow.  This has been used to create column layouts, but floating has some idiosyncrasies that require proactive management. Floated elements must be "cleared", and this can cause problems.</li>
-  <li><strong>Flexbox:</strong> using the CSS property <code>display:flex;</code> is the modern way to manage complex layouts with CSS.  It allows you to flexibly size child elements using some special CSS properties such as <code>flex</code>.  You can find more info at <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes">MDN</a>.</li>
-</ul>
-
-<h3>CSS selectors</h3>
-
-<p>CSS selectors are how you get things on the page to style them in your CSS. There are a few basic ways to do this:</p>
-
-<ul>
-  <li>by element: <code>a { color: red; }</code></li>
-  <li>by class: <code>.danger { color: red; }</code></li>
-</ul>
-
-<p>Remember:</p>
-
-<ul>
-  <li>Classes may be applied to many elements on the page.</li>
-  <li>Elements <strong>can</strong> have many classes!</li>
-</ul>
-
-<p>Select on multiple things on a single element by chaining selectors together without a space, for example: <code>a.danger.btn { color: red; }</code></p>
-
-<h3>Descendant CSS selectors</h3>
-
-<p>You can select nested elements by putting a space between selectors. For example: <code>header a</code> selects all the <code>&lt;a&gt;</code> tags in the header.</p>
-
-<p>Some rules of thumb when nesting CSS selectors:</p>
-
-<ul>
-  <li>Keep it shallow! Deeply nested selectors can get confusing.</li>
-  <li>Omit any unnecessary selectors.  Keep it as simple as possible!</li>
-</ul>
 
 <!--h3>Pseudo-selectors!</h3>
 
