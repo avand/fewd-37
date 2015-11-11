@@ -6,125 +6,11 @@
 
 <h1 id="week-2">Week 2</h1>
 
-<p>
+<p style="font-weight: bold;">
   <a href="homework.html">Homework</a> (due Nov 11).
   If you're looking for more, try the <a href="homework-extras.html">Homework Extras</a>.
 </p>
 
-<h2>Intro to HTML</h2>
-
-<p>
-  <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">MDN</a>
-  has a <strong>great</strong> reference of all the HTML tags used on the web.
-  Here's some HTML tags you'll probably use a lot:
-</p>
-
-<ul>
-  <li>
-    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">p (paragraph)</a>
-  </li>
-  <li>
-    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1">h1 - h6 (headers)</a>
-  </li>
-  <li>
-    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">ul (unordered list)</a>
-  </li>
-  <li>
-    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">li (list item)</a>
-  </li>
-  <li>
-    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">a (anchor)</a>
-  </li>
-  <li>
-    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">img (image)</a>
-  </li>
-</ul>
-
-<p>
-  There are a bunch of things that make up a web page aside from the actual
-  document content itself. Stuff like:
-</p>
-
-<ul>
-  <li>Window/Tab/Page title</li>
-  <li>Description</li>
-  <li>Metadata about the page (used by other pages, like Facebook and Google)</li>
-  <li>Javascript files</li>
-  <li>CSS files</li>
-</ul>
-
-<p>
-  Generally speaking, metadata goes in the <code>&lt;head&gt;</code> tag,
-  and page content goes in the <code>&lt;body&gt;</code> tag.
-</p>
-
-<h3>Atom color-picker instructions</h2>
-
-<ol>
-  <li>Open Atom Settings</li>
-  <li>go to Install in the left hand sidebar</li>
-  <li>type "color-picker" into the search box</li>
-  <li>find the entry for "color-picker" by thomaslindstrom (there are other color picker packages, so make sure you're getting the right one) and click the "Install" button</li>
-  <li>bring up the color picker in Atom when editing a file by pressing cmd+shift+C</li>
-</ol>
-
-<h3>Positioning </h3>
-
-<p>
-  When you use anything other that <code>static</code> (the default value for position),
-  you'll be able to use the properties <code>top</code>, <code>right</code>,
-  <code>bottom</code> and <code>left</code> to adjust your elements position, but
-  how it is positioned depends on what value you set position to:
-</p>
-
-<ul>
-  <li>
-    <code>position: static;</code>
-    <p>
-      Positions based on the content; cannot be adjusted and it's the default
-      value for position for all elements (you probably don't need to know that,
-      but can use it to sound cool at parties).
-    </p>
-  </li>
-  <li>
-    <code>position: fixed;</code>
-    <p>
-      Positions with respect to the browser window (useful for sticky headers and stuff).
-      Use with caution because it will probably cover text!
-    </p>
-  </li>
-  <li>
-    <code>position: relative;</code>
-    <p>
-      Positions relative to where it normally is.
-    </p>
-  </li>
-  <li>
-    <code>position: absolute;</code>
-    <p>
-      "Absolute children have relative parents!" An absolute child element will be positioned
-      relative to it's parent (the one that has <code>position: relative</code>).
-    </p>
-  </li>
-</ul>
-
-<!--
-
-<ul>
-  <li><a target="_blank" href="http://www.crockford.com/wrrrld/color.html">HTML Colors</a></li>
-  <li><a target="_blank" href="http://www.w3.org/TR/CSS2/propidx.html">W3C CSS Properties Table</a></li>
-  <li><a target="_blank" href="https://css-tricks.com/">CSS Tricks</a></li>
-</ul>
-
-
-
-<p>
-  We didn't get to finish building our profiles today. It would have been nice to
-  practice a bit more. I finished mine and posted it for you to use as a reference when
-  working on the homework. Just View > Developer > View Source to see my code.
-  <a href="http://avandamiri.com/my-fewd-34/" target="_blank">Avand's FEWD 34 profile</a>.
-</p>
--->
 <h2>Resources</h2>
 
 <ul>
@@ -186,8 +72,115 @@
   </li>
 </ul>
 
+<h2>Intro to HTML</h2>
+
+<p>
+  <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">MDN</a>
+  has a <strong>great</strong> reference of all the HTML tags used on the web.
+  Here's some HTML tags you'll probably use a lot:
+</p>
+
+<ul>
+  <li>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">p (paragraph)</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1">h1 - h6 (headers)</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">ul (unordered list)</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">li (list item)</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">a (anchor)</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">img (image)</a>
+  </li>
+</ul>
+
+<p>
+  There are a bunch of things that make up a web page aside from the actual
+  document content itself. Stuff like:
+</p>
+
+<ul>
+  <li>Window/Tab/Page title</li>
+  <li>Description</li>
+  <li>Metadata about the page (used by other pages, like Facebook and Google)</li>
+  <li>Javascript files</li>
+  <li>CSS files</li>
+</ul>
+
+<p>
+  Generally speaking, metadata goes in the <code>&lt;head&gt;</code> tag,
+  and page content goes in the <code>&lt;body&gt;</code> tag.
+</p>
+
+<h2>Positioning </h2>
+
+<p>
+  When you use anything other that <code>static</code> (the default value for position),
+  you'll be able to use the properties <code>top</code>, <code>right</code>,
+  <code>bottom</code> and <code>left</code> to adjust your elements position, but
+  how it is positioned depends on what value you set position to:
+</p>
+
+<ul>
+  <li>
+    <code>position: static;</code>
+    <p>
+      Positions based on the content; cannot be adjusted and it's the default
+      value for position for all elements (you probably don't need to know that,
+      but can use it to sound cool at parties).
+    </p>
+  </li>
+  <li>
+    <code>position: fixed;</code>
+    <p>
+      Positions with respect to the browser window (useful for sticky headers and stuff).
+      Use with caution because it will probably cover text!
+    </p>
+  </li>
+  <li>
+    <code>position: relative;</code>
+    <p>
+      Positions relative to where it normally is.
+    </p>
+  </li>
+  <li>
+    <code>position: absolute;</code>
+    <p>
+      "Absolute children have relative parents!" An absolute child element will be positioned
+      relative to it's parent (the one that has <code>position: relative</code>).
+    </p>
+  </li>
+</ul>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/6Z8I8sOinUo" frameborder="0" allowfullscreen></iframe>
+
 <!--
-<h3>Submitting Homework</h3>
+
+<ul>
+  <li><a target="_blank" href="http://www.crockford.com/wrrrld/color.html">HTML Colors</a></li>
+  <li><a target="_blank" href="http://www.w3.org/TR/CSS2/propidx.html">W3C CSS Properties Table</a></li>
+  <li><a target="_blank" href="https://css-tricks.com/">CSS Tricks</a></li>
+</ul>
+
+
+
+<p>
+  We didn't get to finish building our profiles today. It would have been nice to
+  practice a bit more. I finished mine and posted it for you to use as a reference when
+  working on the homework. Just View > Developer > View Source to see my code.
+  <a href="http://avandamiri.com/my-fewd-34/" target="_blank">Avand's FEWD 34 profile</a>.
+</p>
+-->
+
+<!--
+<h2>Submitting Homework</h2>
 
 <ul>
   <li>Create a folder in your GitHub repo for homework. (maybe call it "homework")</li>
