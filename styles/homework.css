@@ -8,3 +8,13 @@
 .homework a {
   color: rgb(149, 48, 41);
 }
+
+.homework-thumbnail {
+  width: 30%;
+  float: right;
+  margin-left: 5%;
+  margin-bottom: 10px;
+  padding: 8px;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
