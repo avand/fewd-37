@@ -1,19 +1,10 @@
 .homework {
-  padding: 1em;
-  background-color: #e8e8e8;
-  font-weight: bold;
-  color: rgb(126, 115, 114);
-  border-radius: 3px;
+  padding: 1em 1.5em;
+  background-color: rgb(255, 254, 182);
+  color: rgb(102, 75, 73);
+  border-radius: 10px;
 }
 
 .homework a {
-  color: rgb(150, 115, 114)
-}
-
-.homework-posted {
-  color: rgb(150, 13, 91);
-}
-
-.homework-posted a {
-  color: rgb(150, 13, 91);
+  color: rgb(149, 48, 41);
 }
