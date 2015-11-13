@@ -1,0 +1,9 @@
+@import 'fonts.css';
+@import 'links.css';
+@import 'homework.css';
+@import 'frames.css';
+
+body {
+  margin: 12px 20%;
+  max-width: 800px;
+}

@@ -1,0 +1,19 @@
+.homework {
+  padding: 1em;
+  background-color: #e8e8e8;
+  font-weight: bold;
+  color: rgb(126, 115, 114);
+  border-radius: 3px;
+}
+
+.homework a {
+  color: rgb(150, 115, 114)
+}
+
+.homework-posted {
+  color: rgb(150, 13, 91);
+}
+
+.homework-posted a {
+  color: rgb(150, 13, 91);
+}
