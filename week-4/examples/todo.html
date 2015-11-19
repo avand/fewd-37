@@ -1,0 +1,32 @@
+<ul>
+</ul>
+
+<script>
+
+// Create a new <li>
+var newListItem = document.createElement("li");
+
+// Set its textContent to whatever you want
+newListItem.textContent = textContent;
+
+// Get the <ul>
+var parentList = document.querySelector("ul");
+
+// Append the new <li> to it
+parentList.appendChild(newListItem);
+
+
+// We now have a good candidate for a function!
+function createListItem(textContent) {
+  var newListItem = document.createElement("li");
+  newListItem.textContent = textContent; // Use the argument instead of a hard coded string
+  var parentList = document.querySelector("ul");
+  parentList.appendChild(newListItem);
+}
+
+// Call the function with a dynamic value
+createListItem("Whatever I want?!")
+createListItem("Something else?!")
+createListItem("...");
+
+</script>

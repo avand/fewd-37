@@ -1,0 +1,11 @@
+a {
+  color: rgb(0, 1, 103);
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+a:hover {
+  opacity: 1;
+}

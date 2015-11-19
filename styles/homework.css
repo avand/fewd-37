@@ -1,0 +1,20 @@
+.homework {
+  padding: 1em 1.5em;
+  background-color: rgb(255, 254, 182);
+  color: rgb(102, 75, 73);
+  border-radius: 10px;
+}
+
+.homework a {
+  color: rgb(149, 48, 41);
+}
+
+.homework-thumbnail {
+  width: 30%;
+  float: right;
+  margin-left: 5%;
+  margin-bottom: 10px;
+  padding: 8px;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
