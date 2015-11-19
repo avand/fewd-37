@@ -47,17 +47,73 @@
   -->
 </ul>
 
-<h2>Objects</h2>
-
-<p>
-  We'll flesh this outline out in class...
-</p>
+<h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">Objects</a></h2>
 
 <ul>
-  <li>string</li>
-  <li>number</li>
-  <li>document</li>
-  <li>element</li>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+    <p>
+      <strong>properties:</strong>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length">length</a> - the string's length</li>
+      </ul>
+    </p>
+    <p>
+      <strong>methods:</strong>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase">toLowerCase</a> - makes all letters lower case.  Takes no arguments.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase">toUpperCase</a> - makes all letters upper case.  Takes no arguments.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">split</a> - splits a string into an array using a delimiter.  Takes one argument: the delimiter to split the string on.</li>
+      </ul>
+    </p>
+  </li>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+    <p>
+      <strong>methods:</strong>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString">toString</a> - returns the number as a string.  Takes no arguments.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed">toFixed</a> - returns the number with a fixed number of significant digits.  Takes one argument: the number of digits.</li>
+      </ul>
+    </p>
+  </li>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Document</a>
+    <p>
+      <strong>methods:</strong>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement">createElement</a> - creates a new element.  Takes one argument: the tag name of the new element</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a> - gets the first element on the page matching a CSS selector.  Takes one argument: the CSS selector to query on</li>
+      </ul>
+    </p>
+  </li>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+    <p>
+      <strong>properties:</strong>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/textContent">textContent</a> - the text contained within this element</li>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">classList</a> - the element's classList object, useful for adding & removing classes.
+          <p>
+            The classList has some important methods of it's own:
+            <ul>
+              <li>add - adds a class</li>
+              <li>remove - removes a class</li>
+              <li>toggle - removes a class if the element currently has it, adds a class if it does not</li>
+            </ul>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      <strong>methods:</strong>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/appendChild">appendChild</a> - adds a child element to this element. Takes one argument: the child element.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute</a> - sets a named attribute on this element to a given value.  Takes two arguments: the attribute name, and the new value.</li>
+      </ul>
+    </p>
+  </li>
 </ul>
 
 <!--
