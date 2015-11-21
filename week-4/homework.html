@@ -1,46 +1,69 @@
+<a href="index.html">Week 4</a>
+
 <h3>Homework</h3>
 
-<img src="http://cloud.avandamiri.com/image/2X3f193O3D2L/Screen%20Shot%202015-11-15%20at%207.52.26%20PM.png"
-     alt="DOM manipulation homework screenshot"
+<h2>Part 1: ACME Corp with JS</h2>
+
+<p>
+  Rebuild ACME Corp but instead of writing HTML leave the body empty:
+</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;ACME Corp&lt;/title&gt;
+    &lt;link rel="stylesheet" href="acme.css" media="screen" charset="utf-8"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- JS will create all the elements --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>
+  Then start building up the DOM:
+</p>
+
+<pre><code>// Create the header
+var body = document.querySelector("body");
+var header = document.createElement("header");
+body.appendChild(header);
+
+// Create the nav
+var nav = document.createElement("nav");
+header.appendChild(nav);
+
+// Create the sign up button
+var button = document.createElement("button");
+button.textContent = "Sign up";
+nav.appendChild(header);
+
+// And so on...
+</code></pre>
+
+<p>
+  The goal should be for your page to look exactly like it did before but this
+  time the page is being <strong>dynamically generated</strong>, which is how
+  a lot of web applications work today.
+</p>
+
+<h2>Part 2: Blog</h2>
+
+<img src="http://cloud.avandamiri.com/image/071P2X053F0i/download/Screen%20Shot%202015-11-21%20at%2012.15.52%20PM.png"
+     alt="Blog homework screenshot"
      class="homework-thumbnail">
 
-<p>
-  Finish the exercise DOM manipulation exercise we started in class. Here's what you will need:
-</p>
-
-<ol>
-  <li>
-    Download the <a href="week-5/dom-manipulation.html">DOM Manipulation</a> HTML file
-    (right click, save). You may have already done this in class note <strong>there are
-    new pseudo-code comments that you'll want to read</strong> (unless you want to take a crack
-    at it yourself without my hints).
-  </li>
-  <li>
-    Figure out how <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute()</a></code>
-    works.
-  </li>
-  <li>
-    Take a peek at Element's <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">classList</a></code>
-    property. There are two ways to solve the third set. Next week, I'll ask you to compare/contrast
-    the two methods. You can accomplish it with <code>setAttribute()</code> but you can also
-    use <code>classList</code> too. Maybe try both!
-  </li>
-  <li>
-    Watch this video of me demoing the solution:
-    <a href="http://cloud.avandamiri.com/0L293t0T461h" target="_blank">
-      http://cloud.avandamiri.com/0L293t0T461h
-    </a>
-  </li>
-  <li>Suffer. Learning to do things you've never done before is hard.</li>
-</ol>
+<ul>
+  <li><a href="http://cloud.avandamiri.com/280v003b2S2m">Watch a video demo</a> (last bit about <code>preventDefault()</code> does not apply)</li>
+  <li><a href="homework/blog.html">Download the starting point</a> (right click, save page as...)</li>
+</ul>
 
 <p>
-  Feeling totally stuck? Here's a tip: look at the code we wrote together in class
-  for that first set. Above each line write a little comment to yourself explaing what it does.
-  This is your chance to explain what the hell the JS is doing. You should have one comment
-  above each line. Then step away for a few minutes, delete the code (leave the comments), and
-  <strong>re-write</strong> the code using your pseudo code. This translation process will
-  be super helpful for you--especially if you felt like you couldn't complete the set in-class.
+  There are two challenges here. Make the link increment the like counter and
+  make the comment for add a comment to the page. You don't have to worry about
+  the event handling portion of it, I've written that for you. Feel free to study
+  the code that is there because that's the next thing you'll be learning.
 </p>
+
 
 <link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">

@@ -104,7 +104,23 @@
     </main>
 
     <script>
-      // Your code goes here.
+      var link = document.querySelector(".like-link");
+      var form = document.querySelector("#new-comment");
+
+      link.addEventListener("click", like);
+      link.addEventListener("submit", comment);
+
+      function like(event) {
+        event.preventDefault();
+
+        // Your code for like goes here
+      }
+
+      function comment(event) {
+        event.preventDefault();
+
+        // Your code for comments goes here
+      }
     </script>
   </body>
 </html>
