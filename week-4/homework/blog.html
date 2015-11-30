@@ -108,7 +108,7 @@
       var form = document.querySelector("#new-comment");
 
       link.addEventListener("click", like);
-      link.addEventListener("submit", comment);
+      form.addEventListener("submit", comment);
 
       function like(event) {
         event.preventDefault();
