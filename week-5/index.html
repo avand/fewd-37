@@ -1,28 +1,62 @@
-<h2 id="week-5">Week 5</h2>
+<meta charset="utf-8">
 
-<h3>Resources</h3>
+<nav>
+  <a href="../index.html">FEWD 37</a> &middot;
+  <a href="../week-4/index.html">Prev week</a> &middot;
+  Next week
+</nav>
 
-<ul>
-  <li><a href="week-5/objects.html">Objects</a></li>
-  <li><a href="week-5/dom-manipulation.html">DOM Manipulation</a></li>
-<!--
-  <li><a href="calc.html">Homework starting point</a></li>
-  <li><a href="events-1.html">Events in-class</a></li>
+<h1>Week 5</h1>
+
+<div class="homework">
+  Will be assigned Dec 2 (probably event listener and arrays if we get that far).
+</div>
+
+<h2>JS Roadmap &amp; Check-in</h2>
+
+<ul class="icon-list">
   <li>
-    <a href="dom-manip.html">Exercise 1: DOM Manipulation</a>
-    (<a href="dom-manip-solution.html">solution</a>)
+    <i class="icon">✅</i> Variables
+    <ul>
+      <li>Why do you need a variable?</li>
+      <li>What would be the limitations of a computer program without variables?</li>
+      <li>In terms of English grammar, what part of speech are variables?</li>
+    </ul>
   </li>
   <li>
-    <a href="functions.html">Exercise 2: FUN-ctions!</a>
-    (<a href="functions-solution.html">solution</a>)
+    <i class="icon">✅</i> Functions
+    <ul>
+      <li>There are four main parts to a function, what are they?</li>
+      <li>What would programming be like without functions?</li>
+      <li>Part of speech?</li>
+    </ul>
   </li>
-  <li><a href="js-playground.html">JS Playground</a></li>
-  <li><a href="books/js-reference.pdf">JS Reference</a></li>
-  <li><a href="http://www.htmldog.com/guides/javascript/">HTML Dog: JavaScript</a></li>
--->
+  <li>
+    <i class="icon">✅</i> DOM Manipulation
+    <ul>
+      <li>What is the DOM? How do you access it?</li>
+      <li>What kinds of things can you do to the DOM? (There are 6 big ones.)</li>
+    </ul>
+  </li>
+  <li><i class="icon">⚪️</i> Event handlers</li>
+  <li><i class="icon">⚪️</i> Arrays</li>
 </ul>
 
-<h3>Event Handling</h3>
+<h2>Plan for the week</h2>
+
+<h2>Examples</h2>
+
+<ul>
+  <li>Coming soon...</li>
+</ul>
+
+<h2>Resources</h2>
+
+<ul>
+  <li>Coming soon...</li>
+</ul>
+
+<h2>Event Handling</h2>
 
 <p>Elements in a web page emit all kinds of "events", for example when a button is clicked it "fires" a "click" event.  We can use these events to do things with special javascript functions called event handlers.</p>
 
@@ -35,10 +69,13 @@
     // get the button element<br>
     var button = document.querySelector('button');<br><br>
     // create an event handler<br>
-    function buttonClicked() {<br>
-      &nbsp;&nbsp;alert('Hello World!');<br>
+    function buttonClicked(event) {<br>
+      event.preventDefault() // supresses the event's default behavior
+      alert('Hello World!');<br>
     }<br><br>
     // add your event listener<br>
     button.addEventListener('click', buttonClicked);
   </code>
 </pre>
+
+<link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
