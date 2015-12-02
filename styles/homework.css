@@ -5,6 +5,10 @@
   border-radius: 10px;
 }
 
+.homework ul {
+  margin-bottom: 0;
+}
+
 .homework a {
   color: rgb(149, 48, 41);
 }
