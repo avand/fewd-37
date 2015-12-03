@@ -12,8 +12,9 @@ function slideLeft () {
 	else {
 		imageCounter = imageCounter -1;
 	}
+
 	image.src = "images/photo_" + imageCounter + ".jpg";
-	imageLink.href = "images/photo_" + imageCounter + ".jpg";
+	imageLink.href = "images/photo_" + imageCounter + ".jpg"
 }
 
 function slideRight () {
