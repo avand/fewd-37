@@ -55,6 +55,8 @@
 
 <ul>
   <li><a href="examples/calculator.html">Calculator</a></li>
+  <li><a href="examples/forms.html">Forms</a></li>
+  <li><a href="examples/course-application/index.html">Course Application</a> (if you want more practice with forms)</li>
 </ul>
 
 <h2>Resources</h2>
@@ -84,5 +86,14 @@
     button.addEventListener('click', buttonClicked);
   </code>
 </pre>
+
+<p>
+  Three steps to creating event listeners:
+  <ol>
+    <li>Get the element to which you want to listen (<code>var button = document.querySelector('button');</code>)</li>
+    <li>Write the event handler (<code>function buttonClicked(event) {...}</code>)</li>
+    <li>Add the event listener (<code>button.addEventListener('click', buttonClicked);</code>)</li>
+  </ol>
+</p>
 
 <link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">

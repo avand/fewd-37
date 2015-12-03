@@ -3,8 +3,13 @@
 @import 'homework.css';
 @import 'frames.css';
 @import 'icons.css';
+@import 'carousels.css';
 
 body {
   margin: 12px 20%;
   max-width: 800px;
+}
+
+.thumbnail {
+  max-height: 200px;
 }
