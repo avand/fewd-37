@@ -21,4 +21,5 @@
   padding: 8px;
   display: block;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 300px;
 }
