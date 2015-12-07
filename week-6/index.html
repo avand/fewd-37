@@ -1,41 +1,20 @@
-<h1 id="week-6">Week 6</h1>
+<meta charset="utf-8">
 
-<h2>Homework</h2>
+<nav>
+  <a href="../index.html">FEWD 37</a> &middot;
+  <a href="../week-5/index.html">Prev week</a> &middot;
+  Next week
+</nav>
 
-<p>
-  Rather than writing out all the pseudo-code for you, I talk through it
-  in the video below. Please take the time to write the pseudo-code out first.
-  If you try and just write code, I'm sure you'll miss steps. Pseudo-code can help you
-  spot simple mistakes. Good luck!
-</p>
-
-<ol>
-  <li><a href="http://cloud.avandamiri.com/280v003b2S2m">Watch this video</a></li>
-  <li><a href="week-6/blog.html">Download this file</a></li>
-  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">Read about <code>event.preventDefault()</code></a></li>
-  <li>Write code</li>
-</ol>
-
-<h2>Resources</h2>
-
-<ul>
-  <li><a href="week-5/dom-manipulation-solution.html">Homework Solution (DOM Manipulation)</a></li>
-  <li><a href="week-6/calc.html">Calculator Starting Point</a></li>
-  <li><a href="week-6/calc-solution.html">Calculator Solution</a></li>
-  <li><a href="week-6/todo-list.html">Todo List Starting Point</a></li>
-  <li><a href="week-6/todo-list-solution.html">Todo List Solution</a></li>
-  <li><a href="week-6/pseudo-elements.html">Pseudo-elements</a></li>
-  <li><a href="week-6/events.html">Events</a></li>
-</ul>
+<h1>Week 6</h1>
 
 <h2>JavaScript Recipes</h2>
 
 <h3>
-  Adding/changing an element's value:
+  Adding/changing an element's attribute:
 </h3>
 
-<pre><code>
-// If the element is already on the page:
+<pre><code>// If the element is already on the page:
 var el = document.querySelector("img");
 el.setAttribute("src", "http://example.com/logo.png");
 
@@ -48,8 +27,7 @@ el.setAttribute("src", "http://example.com/logo.png");
   Adding/changing an element's textContent:
 </h3>
 
-<pre><code>
-// If the element is already on the page:
+<pre><code>// If the element is already on the page:
 var el = document.querySelector("p");
 el.textContent = "The quick brown fox...";
 
@@ -62,15 +40,21 @@ el.textContent = "The quick brown fox...";
   Adding an element to the page with text content
 </h3>
 
-<pre><code>
-// Let's start with something simple:
-var el = document.createElement("li");
+<p>
+  Here's the first attempt:
+</p>
+
+<pre><code>var el = document.createElement("li");
 el.textContent = "Go grocery shopping...";
 var parentEl = document.querySelector("ul");
 parentEl.appendChild(el);
+</code></pre>
 
-// Now, we could move the hard-coded values to variables:
-var name = "li";
+<p>
+  Notice how there are a bunch of hard-coded values? Let's move those out into variables:
+</p>
+
+<pre><code>var name = "li";
 var text = "Go grocery shopping...";
 var parent = "ul";
 
@@ -78,10 +62,13 @@ var el = document.createElement(name);
 el.textContent = text;
 var parentEl = document.querySelector(parent);
 parentEl.appendChild(el);
+</code></pre>
 
-// That's good, but what we really want is a function.
-// Now, we can addElements whenever we want.
-function addElement(name, parent, text) {
+<p>
+  Now we have a pretty good candiate for a function:
+</p>
+
+<pre><code>function addElement(name, parent, text) {
   var el = document.createElement(name);
   el.textContent = text;
   var parentEl = document.querySelector(parent);
@@ -97,6 +84,7 @@ addElement("li", "ul", "Go grocery shopping...");
   it from any program:
 </p>
 
-<pre><code>
-&lt;script&gt; src="helpers.js">&lt;/script&gt;
+<pre><code>&lt;script&gt; src="helpers.js">&lt;/script&gt;
 </code></pre>
+
+<link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
