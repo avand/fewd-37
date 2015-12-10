@@ -5,27 +5,42 @@
   </form>
 
   <ul id="todo-list">
+    <!--
+    <li>
+      <label>
+        <input type="checkbox">
+        <span>Grocery shopping</span>
+      </label>
+    </li>
+    -->
   </ul>
 </main>
 
 <script>
+
 var form = document.querySelector("#new-todo-item-form");
 var input = document.querySelector("#new-todo-item-input");
 var list = document.querySelector("#todo-list");
 
-function createItem(todo) {
-  var listItem = document.createElement("li");
-  listItem.textContent = todo;
-  list.appendChild(listItem);
-}
+form.addEventListener("submit", addTodo);
 
-function formSubmitted(event) {
+function addTodo(event) {
   event.preventDefault();
-  createItem(input.value);
-  form.reset();
+
+  var li = document.createElement("li");
+  var label = document.createElement("label");
+  var checkbox = document.createElement("input");
+  var span = document.createElement("span");
+
+  checkbox.setAttribute("type", "checkbox");
+  span.textContent = input.value;
+
+  label.appendChild(checkbox);
+  label.appendChild(span);
+  li.appendChild(label);
+  list.appendChild(li);
 }
 
-form.addEventListener("submit", formSubmitted);
 </script>
 
 <style>
@@ -52,7 +67,7 @@ form.addEventListener("submit", formSubmitted);
     padding: .5em 1em;
     cursor: pointer;
   }
-  input {
+  #new-todo-item-input {
     width: 70%;
   }
   button {
@@ -65,8 +80,23 @@ form.addEventListener("submit", formSubmitted);
     margin-bottom: 0;
     margin-top: 0;
   }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
   li {
     margin-top: 0.75em;
     padding-top: 0.75em;
+  }
+  li span {
+    margin-left: 0.5em;
+  }
+  label {
+    cursor: pointer;
+    display: block;
+  }
+  input:checked + span {
+    color: rgb(220, 220, 220);
+    text-decoration: line-through;
   }
 </style>

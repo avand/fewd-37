@@ -9,7 +9,9 @@
 	height: 350px;
 	width: 550px;
 	position: absolute;
+	animation: fadein 4s;
 }
+
 #left-nav {
 	height: 350px;
 	width: 70px;

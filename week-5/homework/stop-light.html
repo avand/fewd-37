@@ -1,0 +1,97 @@
+<div class="controls">
+  <button type="button" class="control control-stop">Stop</button>
+  <button type="button" class="control control-slow">Slow</button>
+  <button type="button" class="control control-go">Go</button>
+  <button type="button" class="control control-caution">Caution</button>
+</div>
+
+<div class="stop-light">
+  <div class="light light-stop"></div>
+  <div class="light light-slow"></div>
+  <div class="light light-go"></div>
+</div>
+
+<style media="screen">
+  * { box-sizing: border-box; }
+  .controls {
+    margin-bottom: 1em;
+  }
+  .stop-light {
+    width: 180px;
+    background-color: rgb(233, 196, 0);
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  .light {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    background-color: rgb(96, 80, 0);
+    border-radius: 100%;
+    border: 2px solid black;
+    border-top-width: 6px;
+    border-bottom-width: 1px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 150ms;
+  }
+
+  .stop-light-stop .light-stop {
+    background-color: rgb(209, 43, 5);
+    box-shadow: 0 10px 40px rgba(209, 43, 5, 0.4);
+  }
+  .stop-light-slow .light-slow {
+    background-color: rgb(255, 240, 47);
+    box-shadow: 0 10px 40px rgba(255, 240, 47, 0.4);
+  }
+  .stop-light-go .light-go {
+    background-color: rgb(9, 204, 40);
+    box-shadow: 0 10px 40px rgba(9, 204, 40, 0.4);
+  }
+</style>
+
+<script type="text/javascript">
+var stopLight = document.querySelector(".stop-light")
+
+var stopControl = document.querySelector(".control-stop");
+var slowControl = document.querySelector(".control-slow");
+var goControl = document.querySelector(".control-go");
+var cautionControl = document.querySelector(".control-caution");
+
+stopControl.addEventListener("click", stop);
+slowControl.addEventListener("click", slow);
+goControl.addEventListener("click", go);
+cautionControl.addEventListener("click", caution);
+
+function stop(event) {
+  event.preventDefault();
+  stopLight.classList.add("stop-light-stop");
+  stopLight.classList.remove("stop-light-slow");
+  stopLight.classList.remove("stop-light-go");
+}
+
+function slow(event) {
+  event.preventDefault();
+  stopLight.classList.remove("stop-light-stop");
+  stopLight.classList.add("stop-light-slow");
+  stopLight.classList.remove("stop-light-go");
+}
+
+function go(event) {
+  event.preventDefault();
+  stopLight.classList.remove("stop-light-stop");
+  stopLight.classList.remove("stop-light-slow");
+  stopLight.classList.add("stop-light-go");
+}
+
+function caution(event) {
+  event.preventDefault();
+
+  slow(event);
+
+  setInterval(function() {
+    stopLight.classList.toggle("stop-light-slow");
+  }, 1000);
+}
+</script>

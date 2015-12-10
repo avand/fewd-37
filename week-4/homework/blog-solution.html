@@ -104,34 +104,32 @@
     </main>
 
     <script>
-      var likeLink = document.querySelector(".like-link");
-      var likeCount = document.querySelector(".like-count");
+    var likeLink = document.querySelector(".like-link");
+    var likeCount = document.querySelector(".like-count");
 
-      var commentForm = document.querySelector("#new-comment");
-      var commentBody = document.querySelector("#new-comment-body");
-      var comments = document.querySelector("#comments");
+    var commentForm = document.querySelector("#new-comment");
+    var commentBody = document.querySelector("#new-comment-body");
+    var comments = document.querySelector("#comments");
 
-      function like(event) {
-        event.preventDefault();
+    likeLink.addEventListener("click", like);
+    commentForm.addEventListener("submit", createComment);
 
-        var count = parseInt(likeCount.textContent)
-        likeCount.textContent = count + 1;
-      }
+    function like(event) {
+      event.preventDefault();
 
-      function createComment(event) {
-        event.preventDefault();
+      var count = parseInt(likeCount.textContent)
+      likeCount.textContent = count + 1;
+    }
 
-        if (commentBody.value.length > 0) {
-          var comment = document.createElement("div");
-          comment.setAttribute("class", "comment");
-          comment.textContent = commentBody.value;
-          comments.appendChild(comment);
-          commentForm.reset();
-        }
-      };
+    function createComment(event) {
+      event.preventDefault();
 
-      likeLink.addEventListener("click", like);
-      commentForm.addEventListener("submit", createComment);
+      var comment = document.createElement("div");
+      comment.setAttribute("class", "comment");
+      comment.textContent = commentBody.value;
+      comments.appendChild(comment);
+      commentForm.reset();
+    };
     </script>
   </body>
 </html>

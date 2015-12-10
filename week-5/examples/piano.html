@@ -1,0 +1,117 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.17/howler.min.js"></script>
+
+<script>
+var howl = new Howl({
+  urls: ['http://murrayclement.github.io/fewd-34/resources/sound/piano-press-short.mp3'],
+  volume: 0.5,
+  sprite: {
+    C: [0, 950],
+    D: [2000, 950],
+    E: [4000, 950],
+    F: [5000, 950],
+    G: [7000, 950],
+    A: [9000, 950],
+    B: [11000, 950]
+  }
+});
+</script>
+
+<h1>Piano</h1>
+
+<div class="keys">
+  <div class="key" id="C">C</div>
+
+  <div class="key" id="D">D</div>
+
+  <div class="key" id="E">E</div>
+
+  <div class="key" id="F">F</div>
+
+  <div class="key" id="G">G</div>
+
+  <div class="key" id="A">A</div>
+
+  <div class="key" id="B">B</div>
+</div>
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+    font-family: Arial;
+  }
+  .keys {
+    width: 350px;
+    margin: 0 auto;
+    overflow: auto;
+  }
+  .key {
+    border: 1px solid black;
+    border-bottom-width: 4px;
+    width: 50px;
+    height: 150px;
+    float: left;
+    background-color: white;
+  }
+  .key:hover {
+    background-color: rgb(240, 240, 240);
+  }
+  .key:active {
+    border-bottom-width: 2px;
+    background-color: rgb(220, 220, 220);
+  }
+</style>
+
+<script>
+c = document.querySelector("#C");
+d = document.querySelector("#D");
+e = document.querySelector("#E");
+f = document.querySelector("#F");
+g = document.querySelector("#G");
+a = document.querySelector("#A");
+b = document.querySelector("#B");
+
+c.addEventListener("click", playC);
+d.addEventListener("click", playD);
+e.addEventListener("click", playE);
+f.addEventListener("click", playF);
+g.addEventListener("click", playG);
+a.addEventListener("click", playA);
+b.addEventListener("click", playB);
+
+function playC(event) {
+  event.preventDefault();
+  howl.play("C")
+}
+
+function playD(event) {
+  event.preventDefault();
+  howl.play("D")
+}
+
+function playE(event) {
+  event.preventDefault();
+  howl.play("E")
+}
+
+function playF(event) {
+  event.preventDefault();
+  howl.play("F")
+}
+
+function playG(event) {
+  event.preventDefault();
+  howl.play("G")
+}
+
+function playA(event) {
+  event.preventDefault();
+  howl.play("A")
+}
+
+function playB(event) {
+  event.preventDefault();
+  howl.play("B")
+}
+</script>
