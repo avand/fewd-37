@@ -1,0 +1,67 @@
+* { box-sizing: border-box; }
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f1f0f5;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.4em;
+}
+main {
+  margin: 2em auto;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  background: white;
+  padding: 2em 3em;
+  max-width: 600px;
+}
+input,
+button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom-width: 2px;
+  border-radius: 5px; font-size: inherit;
+  padding: .5em 1em;
+  cursor: pointer;
+}
+input {
+  width: 70%;
+}
+button {
+  color: white;
+  width: 28%;
+  background-color: #04d78b;
+}
+a {
+  color: #099c67;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+#movies {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.movie {
+  overflow: auto;
+  margin-top: 0.8em;
+  padding: 0.2em 0 0.8em;
+  border-bottom: 1px solid #e7e7e7;
+}
+.movie:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.movie img {
+  float: left;
+  width: 100px;
+  margin-right: 20px;
+}
+.movie-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: .2em;
+}
+.movie-release-date {
+  color: #b6b6b6;
+}
