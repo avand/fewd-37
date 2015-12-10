@@ -55,19 +55,23 @@ subtractButton.addEventListener("click", subtract);
 multiplyButton.addEventListener("click", multiply);
 divideButton.addEventListener("click", divide);
 
-function add() {
+function add(event) {
+  event.preventDefault();
   result.value = parseFloat(firstOperand.value) + parseFloat(secondOperand.value);
 }
 
-function subtract() {
+function subtract(event) {
+  event.preventDefault();
   result.value = parseFloat(firstOperand.value) - parseFloat(secondOperand.value);
 }
 
-function multiply() {
+function multiply(event) {
+  event.preventDefault();
   result.value = parseFloat(firstOperand.value) * parseFloat(secondOperand.value);
 }
 
-function divide() {
+function divide(event) {
+  event.preventDefault();
   result.value = parseFloat(firstOperand.value) / parseFloat(secondOperand.value);
 }
 </script>
