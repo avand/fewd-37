@@ -1,0 +1,33 @@
+<h3>Homework</h3>
+
+<h2>Todo List CSV</h2>
+
+<a href="http://cloud.avandamiri.com/3Q211D0m1I3a/download/Screen%20Recording%202015-12-09%20at%2005.05%20PM.gif">
+  <img src="http://cloud.avandamiri.com/3Q211D0m1I3a/download/Screen%20Recording%202015-12-09%20at%2005.05%20PM.gif"
+       class="homework-thumbnail">
+</a>
+
+<p>
+  Using the <a href="todo-list/todo-list-csv.html" download>Todo List</a>
+  as a starting point, add support for adding multiple items at once. If you
+  type into the text box "homework, exercise, shopping" you should end up
+  with 3 items on your list.
+</p>
+
+<p>
+  The key here is to leverage <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">String's split function</a>.
+  Given a string, you can call <code>split()</code>, passing in the delimiter
+  as an argument. In this case your delimiter is going to be <code>", "</code>
+  since that's what people will be typing in. <code>split()</code> will return
+  an array and then you can loop through that array with a <code>for</code> loop.
+</p>
+
+<pre><code>var items = "homework, exercise, shopping".split(", ")
+// => ["homework", "exercise", "shopping"]
+
+for (var i = 0; i < items.length; i++) {
+  // do something with items[i]
+}
+</code></pre>
+
+<link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">

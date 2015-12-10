@@ -1,0 +1,102 @@
+<main>
+  <form id="new-todo-item-form">
+    <input type="text" id="new-todo-item-input" placeholder="What do you need to do?">
+    <button type="submit">Create</button>
+  </form>
+
+  <ul id="todo-list">
+    <!--
+    <li>
+      <label>
+        <input type="checkbox">
+        <span>Grocery shopping</span>
+      </label>
+    </li>
+    -->
+  </ul>
+</main>
+
+<script>
+
+var form = document.querySelector("#new-todo-item-form");
+var input = document.querySelector("#new-todo-item-input");
+var list = document.querySelector("#todo-list");
+
+form.addEventListener("submit", addTodo);
+
+function addTodo(event) {
+  event.preventDefault();
+
+  var li = document.createElement("li");
+  var label = document.createElement("label");
+  var checkbox = document.createElement("input");
+  var span = document.createElement("span");
+
+  checkbox.setAttribute("type", "checkbox");
+  span.textContent = input.value;
+
+  label.appendChild(checkbox);
+  label.appendChild(span);
+  li.appendChild(label);
+  list.appendChild(li);
+}
+
+</script>
+
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #f1f0f5;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.4em;
+  }
+  main {
+    margin: 2em auto;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    background: white;
+    padding: 2em 3em;
+    max-width: 600px;
+  }
+  input,
+  button {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom-width: 2px;
+    border-radius: 5px; font-size: inherit;
+    padding: .5em 1em;
+    cursor: pointer;
+  }
+  #new-todo-item-input {
+    width: 70%;
+  }
+  button {
+    color: white;
+    width: 28%;
+    background-color: #049cd8;
+  }
+  form,
+  ul {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    margin-top: 0.75em;
+    padding-top: 0.75em;
+  }
+  li span {
+    margin-left: 0.5em;
+  }
+  label {
+    cursor: pointer;
+    display: block;
+  }
+  input:checked + span {
+    color: rgb(220, 220, 220);
+    text-decoration: line-through;
+  }
+</style>
