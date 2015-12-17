@@ -81,5 +81,38 @@ xhr.send();
   </code></pre>
 </p>
 
+<h2>Local Storage</h2>
+<ul>
+  <li>It's on your computer (as opposed to Firebase which is hosted somewhere else)</li>
+  <li>5 mb of storage space</li>
+</ul>
+<p>
+  Some useful Local Storage commands:
+  <pre><code>
+      //to clear Local Storage
+      localStorage.clear();
+
+      //to save something to local storage - similar to what firebase.push did
+      localStorage.setItem("username", "avandamiri12345");
+
+      //get or read something from Local Storage
+      localStorage.getItem("username");
+    </code></pre>
+</p>
+<p>
+  In your application, you might use this to remember a user's username, even after a page refresh
+  <pre><code>
+      //on page load, check Local Storage to see if there's already a username
+      var username = localStorage.getItem("username");
+
+      //if there is no username, ask the user and set value in local storage
+      if (username == null) {
+        username = prompt("What is your username?");
+        localStorage.setItem("username", username);
+      }
+    </code></pre>
+</p>
+
+
 <link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
 <script type="text/javascript" src="../scripts/carousels.js"></script>
