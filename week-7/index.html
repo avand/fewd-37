@@ -44,5 +44,42 @@ xhr.open("GET", url);
 xhr.send();
 </code></pre>
 
+<h2>Firebase</h2>
+<p> What is it? Firebase makes a number of products for software developers building mobile or web applications.
+  They take care of hosting the database and the back-end code, so you can just connect your front-end code and have persistent data --
+  aka data on your web page doesn't reset every time you refresh the page!
+</p>
+<p>Get started with <a href="https://www.firebase.com/" target="_blank">Firebase</a>
+  <ul>
+    <li>Sign up for an account</li>
+    <li>Read the documentation on the <a href="https://www.firebase.com/docs/web/quickstart.html" target="_blank">Quickstart</a> page.</li>
+    <li>Check out the "Chat" code in the Examples section. We're making an app just like this one!</li>
+    <li>As noted in Step 2 of the guides, copy the <strong>script</strong> tag into the head of your application to get access to the Firebase library (all their variables and methods).</li>
+  </ul>
+</p>
+<p>
+  How to add a new item to the Firebase database
+  <pre><code>
+    var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
+
+    //sample data object, any key-value pairs will work
+    var mustang = {
+      make: "ford",
+      color: "red"
+    }
+
+    //push new object to our database
+    firebase.push(mustang);
+
+    //create an event listener for the 'child_added' event
+    //this is a method Firebase gives us access to
+    //it listens for anything new getting added to our database
+    firebase.on('child_added', function (snapshot) {
+      var data = snapshot.val();
+      console.log(data);
+    })
+  </code></pre>
+</p>
+
 <link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
 <script type="text/javascript" src="../scripts/carousels.js"></script>
