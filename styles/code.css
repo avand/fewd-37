@@ -1,0 +1,14 @@
+code {
+  display: inline-block;
+  font-size: 0.8em;
+  color: rgb(34, 35, 36);
+  background-color: rgb(234, 242, 244);
+  border: 1px solid rgb(237, 237, 237);
+  border-radius: .5em;
+  padding: 0 0.6em;
+}
+
+pre {
+  margin: 0;
+
+}

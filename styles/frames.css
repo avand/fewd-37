@@ -4,13 +4,3 @@ iframe {
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.05);
 }
-
-pre {
-  font-size: 0.8em;
-  line-height: 1.4em;
-  padding: 10px;
-  color: rgb(34, 35, 36);
-  background-color: rgb(234, 242, 244);
-  border: 1px solid rgb(237, 237, 237);
-  border-radius: 1em;
-}
