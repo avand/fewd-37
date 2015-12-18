@@ -1,0 +1,92 @@
+body {
+  font: 18px/24px 'Helvetica Neue', Helvetica, Arial;
+  background-color: rgb(229, 241, 251);
+  margin: 0;
+  padding-bottom: 6em;
+}
+
+#new-message-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+input {
+  display: inline-block;
+  border-radius: 5px;
+  font: inherit;
+  padding: .5em;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  transition: all 200ms;
+}
+
+input:focus,
+input:active {
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 1.0);
+}
+
+input[type="text"] {
+  width: 90%;
+  box-shadow: inset 0 0.1em .3em rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"] {
+  width: 9%;
+  float: right;
+  font-weight: bold;
+  color: white;
+  background-image: linear-gradient(180deg, rgb(40, 175, 205), rgb(42, 138, 189));
+}
+
+#messages {
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+}
+
+#messages li {
+  margin-bottom: 1em;
+}
+
+#messages li div:first-child {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: .5em;
+  border-radius: 5px;
+}
+
+#messages li div:last-child {
+  font-size: 0.6em;
+  margin-left: 1em;
+  font-weight: 500;
+}
+
+#messages li div:last-child::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.6) transparent transparent transparent;
+}
+
+#messages li div:last-child span {
+  float: right;
+  opacity: 0.5;
+  font-weight: normal;
+}
+
+#no-messages {
+  text-align: center;
+  opacity: 0.3;
+  padding: 2em;
+}
+
+.hidden {
+  display: none !important;
+}
