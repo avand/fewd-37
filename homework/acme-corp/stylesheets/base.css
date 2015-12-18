@@ -30,19 +30,3 @@ section {
 section h1 {
   margin-top: 0;
 }
-
-@media (max-width: 600px) {
-  .container {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  header {
-    padding: 5px 10px;
-  }
-  section {
-    margin-top: 10px;
-  }
-  .products img {
-    max-width: 100px;
-  }
-}
