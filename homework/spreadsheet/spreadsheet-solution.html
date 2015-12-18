@@ -7,8 +7,10 @@ table {
   margin-bottom: 1em;
 }
 td {
-  border: 1px solid #ccc;
   padding: 1em;
+
+  /* Safari doesn't render borders for empty cells, use box-shadow instead */
+  box-shadow: inset 0 0 1px #8a8282;
 }
 button {
   border: 1px solid rgba(0, 0, 0, 0.2);
