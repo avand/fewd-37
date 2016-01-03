@@ -48,6 +48,8 @@ function createMessage(username, messageBody, createdAt) {
   li.appendChild(messageBodyContainer);
   li.appendChild(usernameContainer);
   messageList.appendChild(li);
+
+  window.scrollTo(0,document.body.scrollHeight);
 }
 
 firebase.limitToLast(100).on('child_added', function (snapshot) {
