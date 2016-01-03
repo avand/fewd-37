@@ -64,28 +64,30 @@ xhr.send();
   </ul>
 </p>
 <p>
-  How to add a new item to the Firebase database
-  <pre><code>
-    var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
-
-    //sample data object, any key-value pairs will work
-    var mustang = {
-      make: "ford",
-      color: "red"
-    }
-
-    //push new object to our database
-    firebase.push(mustang);
-
-    //create an event listener for the 'child_added' event
-    //this is a method Firebase gives us access to
-    //it listens for anything new getting added to our database
-    firebase.on('child_added', function (snapshot) {
-      var data = snapshot.val();
-      console.log(data);
-    })
-  </code></pre>
+  How to add a new item to the Firebase database:
 </p>
+
+<pre><code>var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
+
+// Sample data object, any key-value pairs will work
+var mustang = {
+  make: "ford",
+  color: "red"
+}
+
+// Push new object to our database
+firebase.push(mustang);
+
+// Create an event listener for the 'child_added' event
+// This is a method Firebase gives us access to
+// It listens for anything new getting added to our database
+firebase.on("child_added", function (snapshot) {
+  // A "snapshot" is a special Firebase concept. Just know that calling val()
+  // will give you back the data stored in the database.
+  var data = snapshot.val();
+  console.log(data);
+})
+</code></pre>
 
 <h2>Local Storage</h2>
 <ul>
@@ -94,30 +96,30 @@ xhr.send();
 </ul>
 <p>
   Some useful Local Storage commands:
-  <pre><code>
-      //to clear Local Storage
-      localStorage.clear();
-
-      //to save something to local storage - similar to what firebase.push did
-      localStorage.setItem("username", "avandamiri12345");
-
-      //get or read something from Local Storage
-      localStorage.getItem("username");
-    </code></pre>
 </p>
+<pre><code>// To clear local storage (remove all entries)
+localStorage.clear();
+
+// To save something to local storage - similar to what firebase.push did above
+localStorage.setItem("username", "avandamiri12345");
+
+// Get or read something from Local Storage
+localStorage.getItem("username");
+</code></pre>
+
 <p>
   In your application, you might use this to remember a user's username, even after a page refresh
-  <pre><code>
-      //on page load, check Local Storage to see if there's already a username
-      var username = localStorage.getItem("username");
-
-      //if there is no username, ask the user and set value in local storage
-      if (username == null) {
-        username = prompt("What is your username?");
-        localStorage.setItem("username", username);
-      }
-    </code></pre>
 </p>
+
+<pre><code>// On page load, check Local Storage to see if there's already a username
+var username = localStorage.getItem("username");
+
+// If there is no username, ask the user and set value in local storage
+if (username == null) {
+  username = prompt("What is your username?");
+  localStorage.setItem("username", username);
+}
+</code></pre>
 
 
 <link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
