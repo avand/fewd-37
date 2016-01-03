@@ -51,17 +51,17 @@
   to it directly, we're going to use their JS library, which makes it even easier.
 </p>
 
-<code><pre>// Include Firebase's JS library on your page (at the top)
+<pre><code>// Include Firebase's JS library on your page (at the top)
 &lt;script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"&gt;&lt;script&gt;
-</pre></code>
+</code></pre>
 
 <p>
   Once that library is loaded, you can connect to the database:
 </p>
 
-<code><pre>// Connect to the Firebase DB
+<pre><code>// Connect to the Firebase DB
 var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
-</pre></code>
+</code></pre>
 
 <p>
   Now you have a variable called <code>firebase</code> with which you can start to call
@@ -93,11 +93,11 @@ var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
   pairs. In this case, we want our "message" to look something like this:
 </p>
 
-<code><pre>var message = {
+<pre><code>var message = {
   username: "avand",
   messageBody: "Hi there, what's the word?",
   createdAt: 1234567
-}</pre></code>
+}</code></pre>
 
 <p>
   Feel free to leave off <code>createdAt</code> for now, if you don't want to
@@ -112,11 +112,11 @@ var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
   look like this:
 </p>
 
-<code><pre>var message = {
+<pre><code>var message = {
   username: prompt("What is your user name?"),
   messageBody: document.querySelector("#message").value,
   createdAt: (new Date()).getTime()
-}</pre></code>
+}</code></pre>
 
 <h4>Display chat messages</h4>
 
@@ -133,7 +133,7 @@ var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
   Here's how you listen to the <code>child_added</code> event:
 </p>
 
-<code><pre>// "on" is just like "addEventListener", it accepts an event type and function as arguments
+<pre><code>// "on" is just like "addEventListener", it accepts an event type and function as arguments
 firebase.on("child_added", createMessageFromFirebase);
 
 // This function will get called for every chat message in the database
@@ -150,7 +150,7 @@ function createMessageFromFirebase(snapshot) {
   // Not pictured: creating the element you need to house the username
   // (and maybe date if you're feeling adventurous)
 }
-</pre></code>
+</code></pre>
 
 <h4>Asking for a username (only once)</h4>
 
@@ -224,3 +224,7 @@ dateElement.textContent = strftime('%a %l:%M %P', createdAt)
 <pre><code>&lt;script src="http://f.cl.ly/items/2K2Z2g0L3v1q1I413j1O/strftime%20githubcomsamsonjsstrf.txt"&gt;&lt;/script&gt;</code></pre>
 
 <link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/railscasts.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/languages/javascript.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
