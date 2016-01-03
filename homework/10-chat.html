@@ -2,10 +2,8 @@
 
 <h2>Chat</h2>
 
-<a href="http://cloud.avandamiri.com/1P1m3m2W0d2L/Screen%20Shot%202015-12-18%20at%2011.16.29%20AM.png">
-  <img src="http://cloud.avandamiri.com/1P1m3m2W0d2L/Screen%20Shot%202015-12-18%20at%2011.16.29%20AM.png"
-       class="homework-thumbnail">
-</a>
+<video src="http://cloud.avandamiri.com/01013I3Z0G0i/chat.mov" class="homework-thumbnail" controls>
+</video>
 
 <p>
   For this assignment, you're going to build a real-time chat client. Just like
@@ -129,7 +127,7 @@ var firebase = new Firebase("https://blinding-inferno-7422.firebaseio.com");
   <li>Use the <code>messageBody</code> from the Firebase data to set your
     message's <code>textContent</code>.</li>
   <li>Append your message element to the page</li>
-</li>
+</ol>
 
 <p>
   Here's how you listen to the <code>child_added</code> event:
@@ -174,5 +172,55 @@ if (username == null) {
   localStorage.setItem("username", username);
 }
 </code></pre>
+
+<h4>What about dates?</h4>
+
+<p>
+  Getting dates working is totally optional but dates are just another object
+  you need to be familiar with to get them to work. Here's how you make a new
+  date:
+</p>
+
+<pre><code>var now = new Date()</code></pre>
+
+<p>
+  That will create a new date object at the current time (and time zone).
+</p>
+
+<p>
+  Firebase doesn't actually support dates as a data type in the database so you
+  need to save it as different type. Fortunately, dates can be represented as
+  numbers:
+</p>
+
+<pre><code>var now = new Date();
+now.getTime() // => 123456789
+</code></pre>
+
+<p>
+  That number is what you want to send to Firebase as the <code>createdAt</code>
+  field of the message. So what about displaying the date?
+</p>
+
+<p>
+  To display dates, you need to turn that number back into a date. Fortunately,
+  that's easy. Just pass the number right into the date constructor. Then, pass
+  that date object to a special <code>strftime()</code> function that will
+  allow you to format the date nicely for humans.
+</p>
+
+<pre><code>var createdAt = new Date(message.createdAt);
+dateElement.textContent = strftime('%a %l:%M %P', createdAt)
+</code></pre>
+
+<p>
+  The above code will NOT work without the
+  <a href="https://github.com/samsonjs/strftime">strftime</a> library loaded on
+  the page. The string <code>'%a %l:%M %P'</code> is a special string that you can
+  explore using <a href="http://strfti.me">strfti.me</a>. Here's a URL you can
+  use to load that library:
+</p>
+
+<pre><code>&lt;script src="http://f.cl.ly/items/2K2Z2g0L3v1q1I413j1O/strftime%20githubcomsamsonjsstrf.txt"&gt;&lt;/script&gt;</code></pre>
 
 <link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">

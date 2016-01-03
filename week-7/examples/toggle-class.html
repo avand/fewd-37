@@ -1,0 +1,28 @@
+<style>
+.done {
+  color: rgb(193, 193, 193);
+  text-decoration: line-through;
+  cursor: pointer;
+}
+</style>
+
+<ul>
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+</ul>
+
+<script>
+var listItem1 = document.querySelector("li:nth-child(1)");
+var listItem2 = document.querySelector("li:nth-child(2)");
+var listItem3 = document.querySelector("li:nth-child(3)");
+
+listItem1.addEventListener("click", toggleCompleted);
+listItem2.addEventListener("click", toggleCompleted);
+listItem3.addEventListener("click", toggleCompleted);
+
+function toggleCompleted(event) {
+  event.target.classList.toggle("done");
+}
+
+</script>
