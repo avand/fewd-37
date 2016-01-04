@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Facebook</title>
+  </head>
+  <body>
+    <button type="button" id="login">Login with Facebook</button>
+
+    <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1011640565523311',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+
+        document.querySelector("#login").addEventListener("click", function() {
+          FB.login(function(response) {
+            FB.api("/me/events", function(response) {
+              console.log(response);
+            })
+          }, { scope: "user_events" });
+        })
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!--
+    <script type="text/javascript">
+    FB.init({
+      version: 'v2.0',
+      appId: '1435043786720814'
+    });
+
+    // setTimeout(function() {
+    //   FB.login(function(response) {
+    //     console.log(response)
+    //   });
+    // }, 2000);
+    </script> -->
+  </body>
+</html>
