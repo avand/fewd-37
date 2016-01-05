@@ -46,42 +46,42 @@ xhr.send();
   <tr>
     <th>Get element</th>
     <td><code>var span = document.querySelector('span');</code></td>
-    <td><code>var span = $("span");</code></td>
+    <td><code>var $span = $("span");</code></td>
   </tr>
   <tr>
     <th>Create element</th>
     <td><code>var a = document.createElement("a");</code></td>
-    <td><code>var a = $("&lt;a&gt;");</code></td>
+    <td><code>var $a = $("&lt;a&gt;");</code></td>
   </tr>
   <tr>
     <th>Add child</th>
     <td><code>span.appendChild(a);</code></td>
-    <td><code>span.append(a);</code></td>
+    <td><code>$span.append($a);</code></td>
   </tr>
   <tr>
     <th>Get textContent</th>
     <td><code>var linkText = a.textContent;</code></td>
-    <td><code>var linkText = a.text();</code></td>
+    <td><code>var $linkText = $a.text();</code></td>
   </tr>
   <tr>
     <th>Set textContent</th>
     <td><code>a.textContent = "new text content";</code></td>
-    <td><code>a.text("new text content");</code></td>
+    <td><code>$a.text("new text content");</code></td>
   </tr>
   <tr>
     <th>Get attribute</th>
     <td><code>var href = a.getAttribute("href");</code></td>
-    <td><code>var href = a.attr("href");</code></td>
+    <td><code>var $href = $a.attr("href");</code></td>
   </tr>
   <tr>
     <th>Set attribute</th>
     <td><code>a.setAttribute("href", "http://wikipedia.org/");</code></td>
-    <td><code>a.attr("href", "http://wikipedia.org/");</code></td>
+    <td><code>$a.attr("href", "http://wikipedia.org/");</code></td>
   </tr>
   <tr>
     <th>Add event listener</th>
     <td><code>a.addEventListener("click", function() { ... };</code></td>
-    <td><code>a.on("click", function() { ... };</code></td>
+    <td><code>$a.on("click", function() { ... });</code></td>
   </tr>
 </table>
 
@@ -104,10 +104,10 @@ xhr.send();
 </p>
 
 <pre><code>// Get all the todo list items on the page
-var listItems = $("li.todo");
+var $listItems = $("li.todo");
 
 // Add a class to them all
-listItems.addClass("complete");
+$listItems.addClass("complete");
 </code></pre>
 
 <p>
