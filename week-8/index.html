@@ -15,6 +15,27 @@
   <li><a href="facebook.html">Facebook SDK &amp; Graph API</a></li>
 </ul>
 
+<h2>OAuth</h2>
+
+<p>
+  OAuth is a way to sign into to use a provider, like Facebook, SoundCloud,
+  Spotify, etc. on behalf of a particular user and access data that they have
+  access to. It has to be done this way because those services could never
+  just give you access to their whole database. Instead you are gaining access
+  to a portion of the data (whatever access that login can access).
+</p>
+
+<p>
+  Here's a diagram of what OAuth looks like in action:
+</p>
+
+<img src="images/oauth.png" style="width: 100%;">
+
+<p>
+  As you can see it's pretty complicated. So to that end, we'll try and use
+  libraries that do the OAuth for us. The Facebook SDK is an example of that.
+</p>
+
 <link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
 <script type="text/javascript" src="../scripts/carousels.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/railscasts.min.css">
