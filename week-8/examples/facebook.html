@@ -7,45 +7,72 @@
   <body>
     <button type="button" id="login">Login with Facebook</button>
 
-    <script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <button type="button" id="get-events">Get my events</button>
+
+    <ul id="events">
+    </ul>
 
     <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1011640565523311',
-          xfbml      : true,
-          version    : 'v2.5'
-        });
+    var accessToken = null;
 
-        document.querySelector("#login").addEventListener("click", function() {
-          FB.login(function(response) {
-            FB.api("/me/events", function(response) {
-              console.log(response);
-            })
-          }, { scope: "user_events" });
-        })
-      };
+    function createEvent(fbEvent) {
+      var li = document.createElement("li");
+      li.textContent = fbEvent.name;
+      document.querySelector("#events").appendChild(li);
+    }
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+    document.querySelector("#login").addEventListener("click", function(event) {
+      event.preventDefault();
+
+      FB.login(function(response) {
+        console.log("Logged into Facebook", response);
+        accessToken = response["authResponse"]["accessToken"];
+      }, { scope: "user_events" });
+    })
+
+    document.querySelector("#get-events").addEventListener("click", function(event) {
+      event.preventDefault();
+
+      FB.api("/me/events", function(response) {
+        if (response["error"]) {
+          alert(response["error"]["message"]);
+        } else {
+          console.log("Event results from FB API", response);
+
+          var events = response["data"];
+
+          for (var i = 0; i < events.length; i++) {
+            createEvent(events[i]);
+          }
+        }
+      }, { access_token: accessToken });
+    })
+
+    // Facebook SDK will call fbAsyncInit() when it's finished downloading.
+    window.fbAsyncInit = function() {
+      FB.init({
+         // This is Avand's app ID. Replace it with your own found at
+         // http://developers.facebook.com
+        appId: '1011640565523311',
+        version: 'v2.5'
+      });
+    };
+
+    // This code just adds a <script> tag to the page but since it's being done
+    // via JavaScript, the JS file downloads asynchronously and does not block
+    // the rest of your program from running.
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+     if (window.location.hostname.length == 0) {
+       console.warn("This project has to run on a local server (not via the file system). " +
+         "Please go to your project folder in Terminal and run: python -m SimpleHTTPServer")
+     }
     </script>
-    <!--
-    <script type="text/javascript">
-    FB.init({
-      version: 'v2.0',
-      appId: '1435043786720814'
-    });
-
-    // setTimeout(function() {
-    //   FB.login(function(response) {
-    //     console.log(response)
-    //   });
-    // }, 2000);
-    </script> -->
   </body>
 </html>

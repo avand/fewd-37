@@ -1,0 +1,122 @@
+<meta charset="utf-8">
+
+<nav>
+  <a href="../week-8/index.html">Back to Week 8</a>
+</nav>
+
+<h1>jQuery</h1>
+
+<p>
+  jQuery is a powerful, widely used library that makes a lot of common practices
+  in javascript web development a bit easier.  Here are some examples of how you
+  can use jQuery for some common things we've already done:
+</p>
+
+<table class="table">
+  <tr>
+    <th></th>
+    <th>Vanilla JS</th>
+    <th>jQuery</th>
+  </tr>
+  <tr>
+    <th>AJAX</th>
+    <td><pre><code>var xhr = new XMLHttpRequest();
+xhr.open("GET", "path/to/api");
+xhr.addEventListener("readystatechange", function () {
+  if (xhr.readyState == 4 || xhr.status == 200) {
+    alert("Success: " + xhr.responseText);
+  }
+};
+xhr.send();
+</code></pre>
+    </td>
+    <td><pre><code>$.get("path/to/api", function (response) {
+  alert("Success: " + response);
+});</code></pre></td>
+  </tr>
+  <tr>
+    <th>Get element</th>
+    <td><code>var span = document.querySelector('span');</code></td>
+    <td><code>var $span = $("span");</code></td>
+  </tr>
+  <tr>
+    <th>Create element</th>
+    <td><code>var a = document.createElement("a");</code></td>
+    <td><code>var $a = $("&lt;a&gt;");</code></td>
+  </tr>
+  <tr>
+    <th>Add child</th>
+    <td><code>span.appendChild(a);</code></td>
+    <td><code>$span.append($a);</code></td>
+  </tr>
+  <tr>
+    <th>Get textContent</th>
+    <td><code>var linkText = a.textContent;</code></td>
+    <td><code>var $linkText = $a.text();</code></td>
+  </tr>
+  <tr>
+    <th>Set textContent</th>
+    <td><code>a.textContent = "new text content";</code></td>
+    <td><code>$a.text("new text content");</code></td>
+  </tr>
+  <tr>
+    <th>Get attribute</th>
+    <td><code>var href = a.getAttribute("href");</code></td>
+    <td><code>var $href = $a.attr("href");</code></td>
+  </tr>
+  <tr>
+    <th>Set attribute</th>
+    <td><code>a.setAttribute("href", "http://wikipedia.org/");</code></td>
+    <td><code>$a.attr("href", "http://wikipedia.org/");</code></td>
+  </tr>
+  <tr>
+    <th>Add event listener</th>
+    <td><code>a.addEventListener("click", function() { ... };</code></td>
+    <td><code>$a.on("click", function() { ... });</code></td>
+  </tr>
+</table>
+
+<p>
+  The easiest way to add jQuery to your page is by adding the following script
+  tag to your HTML (put this tag before your own scripts):
+</p>
+
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">&lt;/script></code></pre>
+
+<p>
+  The most important difference with using jQuery for DOM manipulation is that
+  jQuery always works with a "set" of elements. Before, you would do <code>document.querySelector("li.todo")</code>
+  and that would just return ONE element. But when you do the equivalent with
+  jQuery (<code>$("li.todo")</code>), you get a set of elements that match that
+  selector. Furthermore, the DOM manipulation operations (like setting text content
+  or changing an attribute or adding a class, etc.) are available on the set.
+  In other words, jQuery makes it easy to manipulate more than one element at a
+  time, which is usually helpful. Here's an example:
+</p>
+
+<pre><code>// Get all the todo list items on the page
+var $listItems = $("li.todo");
+
+// Add a class to them all
+$listItems.addClass("complete");
+</code></pre>
+
+<p>
+  Before, you would have to use <code>document.querySelectorAll()</code> and
+  a <code>for</code> loop. But jQuery makes it easy.
+</p>
+
+<p>
+  Taking it one step further, jQuery also allows you to chain these operations
+  together. This allows your code to be a bit more succinct.
+</p>
+
+<pre><code>$("&lt;li&gt;").text("...").addClass("...").appendTo("ul")
+</code></pre>
+
+<link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
+<script type="text/javascript" src="../scripts/carousels.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/railscasts.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/languages/javascript.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>

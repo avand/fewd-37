@@ -1,0 +1,104 @@
+<meta charset="utf-8">
+
+<nav>
+  <a href="../week-8/index.html">Back to Week 8</a>
+</nav>
+
+<h1>Facebook SDK &amp; Graph API</h1>
+
+<p>
+  Facebook is a huge platform and accessing their data, known as the Graph API,
+  allows you to build cool and powerful apps. Fortunately, they wrote a library,
+  called an "SDK" and it makes our lives a little easier.
+</p>
+
+<p>
+  Below are some notes on how to mess around with the SDK and the Graph API but
+  you should also take a look at the <a href="examples/facebook.html">working
+  example</a>. It's an app that loads some fo your Facebook events onto the page.
+</p>
+
+<h2>Facebook SDK</h2>
+
+<p>
+  SDK, say what? An SDK is a Software Developer Kit. It's basically just a library
+  of code created by, in this case, Facebook to make your life easier. There's a
+  lot of plumbing involved in talking to the Facebook API and the SDK aims to do
+  some of that for you.
+</p>
+
+<h2>Getting started...</h2>
+
+<p>
+  To work with Facebook you need to create an App.
+</p>
+
+<ol>
+  <li>Go to <a href="https://developers.facebook.com">https://developers.facebook.com</a></li>
+  <li>Click on "My Apps" and select "Add a New App"</li>
+  <li>Choose "Website" as the platform type</li>
+  <li>Follow the next few instructions</li>
+</ol>
+
+<p>
+  They're going to give you a snippet that looks like this:
+</p>
+
+<pre><code>&lt;script&gt;
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '&lt;your app id goes here&gt;',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+&lt;/script&gt;</code></pre>
+
+<h2>Setting up your URL</h2>
+
+<p>
+  Eventually you're going to want to set up a real domain but for now we just want
+  to work locally so just tell Facebook that the Site URL is <code>localhost</code>.
+  You'll also need to skip the "Quick Start" and add <code>localhost</code> as
+  an App Domain too.
+</p>
+
+<p>
+  Then we need to set up your browser to also use <code>localhost</code>. This
+  part is a little tricky so bear with me.
+</p>
+
+<ol>
+  <li>Open Terminal (App > Utilties or use Spotlight to find it)</li>
+  <li>Navigate to your project folder (e.g., <code>cd ~/Code/fewd-37</code>)</li>
+  <li>Start a simple web server: <code>python -m SimpleHTTPServer</code></li>
+</ol>
+
+<p>
+  If all goes according to plan you should be able to open <code>http://localhost:8000/facebook.html</code>,
+  assuming you pasted that previous snippet into a file called <code>facebook.html</code>
+  in the root of your FEWD project folder.
+</p>
+
+<h2>Using the Graph API</h2>
+
+<p>
+  Now, you should be able to talk to the Graph API, where Facebook stores all your
+  secrets. Use the <a href="https://developers.facebook.com/tools/explorer/">Facebook Graph Explorer</a>
+  to figure out what kinds of things you can access.
+</p>
+
+<link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
+<script type="text/javascript" src="../scripts/carousels.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/railscasts.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/languages/javascript.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>

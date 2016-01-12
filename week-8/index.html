@@ -3,204 +3,37 @@
 <nav>
   <a href="../index.html">FEWD 37</a> &middot;
   <a href="../week-7/index.html">Prev week</a> &middot;
-  Next week
+  <a href="../week-9/index.html">Next week</a>
 </nav>
 
 <h1>Week 8</h1>
 
+<h2>Resources</h2>
+
 <ul>
-  <li><a href="#jquery">jQuery</a></li>
-  <li><a href="#facebook">Using Facebook SDK &amp; Graph API</a></li>
+  <li><a href="jquery.html">jQuery</a></li>
+  <li><a href="facebook.html">Facebook SDK &amp; Graph API</a></li>
 </ul>
 
-<h2 id="jquery">jQuery</h2>
+<h2>OAuth</h2>
 
 <p>
-  jQuery is a powerful, widely used library that makes a lot of common practices
-  in javascript web development a bit easier.  Here are some examples of how you
-  can use jQuery for some common things we've already done:
-</p>
-
-<table class="table">
-  <tr>
-    <th></th>
-    <th>Vanilla JS</th>
-    <th>jQuery</th>
-  </tr>
-  <tr>
-    <th>AJAX</th>
-    <td><pre><code>var xhr = new XMLHttpRequest();
-xhr.open("GET", "path/to/api");
-xhr.addEventListener("readystatechange", function () {
-  if (xhr.readyState == 4 || xhr.status == 200) {
-    alert("Success: " + xhr.responseText);
-  }
-};
-xhr.send();
-</code></pre>
-    </td>
-    <td><pre><code>$.get("path/to/api", function (response) {
-  alert("Success: " + response);
-});</code></pre></td>
-  </tr>
-  <tr>
-    <th>Get element</th>
-    <td><code>var span = document.querySelector('span');</code></td>
-    <td><code>var span = $("span");</code></td>
-  </tr>
-  <tr>
-    <th>Create element</th>
-    <td><code>var a = document.createElement("a");</code></td>
-    <td><code>var a = $("&lt;a&gt;");</code></td>
-  </tr>
-  <tr>
-    <th>Add child</th>
-    <td><code>span.appendChild(a);</code></td>
-    <td><code>span.append(a);</code></td>
-  </tr>
-  <tr>
-    <th>Get textContent</th>
-    <td><code>var linkText = a.textContent;</code></td>
-    <td><code>var linkText = a.text();</code></td>
-  </tr>
-  <tr>
-    <th>Set textContent</th>
-    <td><code>a.textContent = "new text content";</code></td>
-    <td><code>a.text("new text content");</code></td>
-  </tr>
-  <tr>
-    <th>Get attribute</th>
-    <td><code>var href = a.getAttribute("href");</code></td>
-    <td><code>var href = a.attr("href");</code></td>
-  </tr>
-  <tr>
-    <th>Set attribute</th>
-    <td><code>a.setAttribute("href", "http://wikipedia.org/");</code></td>
-    <td><code>a.attr("href", "http://wikipedia.org/");</code></td>
-  </tr>
-  <tr>
-    <th>Add event listener</th>
-    <td><code>a.addEventListener("click", function() { ... };</code></td>
-    <td><code>a.on("click", function() { ... };</code></td>
-  </tr>
-</table>
-
-<p>
-  The easiest way to add jQuery to your page is by adding the following script
-  tag to your HTML (put this tag before your own scripts):
-</p>
-
-<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">&lt;/script></code></pre>
-
-<p>
-  The most important difference with using jQuery for DOM manipulation is that
-  jQuery always works with a "set" of elements. Before, you would do <code>document.querySelector("li.todo")</code>
-  and that would just return ONE element. But when you do the equivalent with
-  jQuery (<code>$("li.todo")</code>), you get a set of elements that match that
-  selector. Furthermore, the DOM manipulation operations (like setting text content
-  or changing an attribute or adding a class, etc.) are available on the set.
-  In other words, jQuery makes it easy to manipulate more than one element at a
-  time, which is usually helpful. Here's an example:
-</p>
-
-<pre><code>// Get all the todo list items on the page
-var listItems = $("li.todo");
-
-// Add a class to them all
-listItems.addClass("complete");
-</code></pre>
-
-<p>
-  Before, you would have to use <code>document.querySelectorAll()</code> and
-  a <code>for</code> loop. But jQuery makes it easy.
+  OAuth is a way to sign into to use a provider, like Facebook, SoundCloud,
+  Spotify, etc. on behalf of a particular user and access data that they have
+  access to. It has to be done this way because those services could never
+  just give you access to their whole database. Instead you are gaining access
+  to a portion of the data (whatever access that login can access).
 </p>
 
 <p>
-  Taking it one step further, jQuery also allows you to chain these operations
-  together. This allows your code to be a bit more succinct.
+  Here's a diagram of what OAuth looks like in action:
 </p>
 
-<pre><code>$("&lt;li&gt;").text("...").addClass("...").appendTo("ul")
-</code></pre>
-
-<h2 id="facebook">Using Facebook SDK &amp; Graph API</h2>
-
-<h3>Facebook SDK</h3>
+<img src="images/oauth.png" style="width: 100%;">
 
 <p>
-  SDK, say what? An SDK is a Software Developer Kit. It's basically just a library
-  of code created by, in this case, Facebook to make your life easier. There's a
-  lot of plumbing involved in talking to the Facebook API and the SDK aims to do
-  some of that for you.
-</p>
-
-<h3>Getting started...</h3>
-
-<p>
-  To work with Facebook you need to create an App.
-</p>
-
-<ol>
-  <li>Go to <a href="https://developers.facebook.com">https://developers.facebook.com</a></li>
-  <li>Click on "My Apps" and select "Add a New App"</li>
-  <li>Choose "Website" as the platform type</li>
-  <li>Follow the next few instructions</li>
-</ol>
-
-<p>
-  They're going to give you a snippet that looks like this:
-</p>
-
-<pre><code>&lt;script&gt;
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '&lt;your app id goes here&gt;',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-&lt;/script&gt;</code></pre>
-
-<h3>Setting up your URL</h3>
-
-<p>
-  Eventually you're going to want to set up a real domain but for now we just want
-  to work locally so just tell Facebook that the Site URL is <code>localhost</code>.
-  You'll also need to skip the "Quick Start" and add <code>localhost</code> as
-  an App Domain too.
-</p>
-
-<p>
-  Then we need to set up your browser to also use <code>localhost</code>. This
-  part is a little tricky so bear with me.
-</p>
-
-<ol>
-  <li>Open Terminal (App > Utilties or use Spotlight to find it)</li>
-  <li>Navigate to your project folder (e.g., <code>cd ~/Code/fewd-37</code>)</li>
-  <li>Start a simple web server: <code>python -m SimpleHTTPServer</code></li>
-</ol>
-
-<p>
-  If all goes according to plan you should be able to open <code>http://localhost:8000/facebook.html</code>,
-  assuming you pasted that previous snippet into a file called <code>facebook.html</code>
-  in the root of your FEWD project folder.
-</p>
-
-<h3>Using the Graph API</h3>
-
-<p>
-  Now, you should be able to talk to the Graph API, where Facebook stores all your
-  secrets. Use the <a href="https://developers.facebook.com/tools/explorer/">Facebook Graph Explorer</a>
-  to figure out what kinds of things you can access.
+  As you can see it's pretty complicated. So to that end, we'll try and use
+  libraries that do the OAuth for us. The Facebook SDK is an example of that.
 </p>
 
 <link rel="stylesheet" href="../styles/all.css" media="screen" title="All styles" charset="utf-8">
